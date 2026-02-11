@@ -17,5 +17,7 @@ Although the indexed display may appear coloured depending on the MATLAB version
 I = ind2gray(X, map);   
 imshow(I)
 ```
+<img src="3.png" width="300">
+
  'I' which is a 200 x 320 two-dimensional matrix containing the pixel (brightness) value of the image (data type is 'double' and its value is between 0.0 and 1.0).
   
