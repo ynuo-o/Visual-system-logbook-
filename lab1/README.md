@@ -34,6 +34,34 @@ Since grayscale intensities in MATLAB are normalised to the range `[0, 1]`, this
 
 
 ### Task 1 - Image Rotation
+#### Image Rotation Using Reverse Mapping
+The function `Rotate(In, Theta)` performs geometric rotation of a grayscale image about its centre using a reverse mapping strategy with nearest-neighbour interpolation.
+
+The size of the input image is obtained to ensure that the output image `Out` is created with the same spatial dimensions, as required by the task. The image centre is computed using:
+```matlab
+cx = (cols + 1) / 2  
+cy = (rows + 1) / 2
+ ``` 
+which allows rotation to occur around the true geometric centre rather than the top-left corner.
+
+To avoid the holes and pixel overlaps produced by forward mapping, the algorithm applies the inverse rotation matrix:
+```matlab
+R⁻¹ = [ cos(Theta)   sin(Theta)
+       -sin(Theta)   cos(Theta) ]
+ ``` 
+
+Then, for each pixel in the destination image, the corresponding source coordinate is calculated by:
+1. Translating the pixel so the origin is at the image centre
+2. Applying the inverse rotation
+3. Translating the coordinate back to the original reference frame
+Because source coordinates are generally non-integer, the nearest-neighbour rule is used:
+```matlab
+x_nn = round(x_s)  
+y_nn = round(y_s)
+ ``` 
+If the mapped source pixel lies inside the image bounds, its grayscale intensity is copied to the destination pixel.
+Otherwise, the destination pixel is assigned the value 0 (black), ensuring valid output for out-of-range mappings.
+
 
 
 
