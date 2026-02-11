@@ -28,7 +28,11 @@ value = I(20,319)
 Matlab responds with the greyscale value of the image at (20,319): 
 ```matlab
 value = 0.3425
-``` 
+```
+The returned value `0.3425` represents the grayscale intensity of the pixel at location `(20, 319)`.  
+Since grayscale intensities in MATLAB are normalised to the range `[0, 1]`, this value corresponds to a relatively dark grey tone rather than pure black (`0`) or white (`1`).
+
+
 ### Task 1 - Image Rotation
 
 
