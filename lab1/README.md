@@ -29,3 +29,13 @@ Matlab responds with the greyscale value of the image at (20,319):
 ```matlab
 value = 0.3425
 ``` 
+### Task 1 - Image Rotation
+
+
+
+
+
+
+
+
+
