@@ -25,7 +25,7 @@ The variable `I` is a 200 x 320 two-dimensional matrix representing the grayscal
 ```matlab
 value = I(20,319)  
  ``` 
-Matlab responds with the greyscale value of the image at (319,20): 
+Matlab responds with the greyscale value of the image at (20,319): 
 ```matlab
 value = 0.3425
 ``` 
