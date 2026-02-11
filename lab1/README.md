@@ -20,7 +20,7 @@ imshow(I)
 ```
 <img src="3.png" width="300">
 
-The variable `I` is a 200 x 320 two-dimensional matrix representing the grayscale intensity (brightness)of each pixel, with values  range [0, 1]. if we type 
+The variable `I` is a 200 x 320 two-dimensional matrix representing the grayscale intensity (brightness)of each pixel, with values in the range [0, 1]. if we type 
 
 ```matlab
 value = I(20,319)  
