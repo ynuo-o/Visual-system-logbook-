@@ -54,19 +54,19 @@ The brain hates "holes" in our vision, so it uses interpolation (filling in the 
 
 **Scientific Explanation**
 1. **Photoreceptor Fatigue**: 
-   * When you stare at a specific color, the cone cells in your retina that are sensitive to that color become "fatigued" or overstimulated.
-   * This leads to a temporary decrease in their sensitivity.
+* When you stare at a specific color, the cone cells in your retina that are sensitive to that color become "fatigued" or overstimulated.
+* This leads to a temporary decrease in their sensitivity.
 
 2. **Opponent Process Theory**:
-   * Our visual system processes colors in antagonistic pairs: **Red vs. Green**, **Blue vs. Yellow**, and **Black vs. White**.
-   * While the receptors for the "funny" colors are inhibited/fatigued, the receptors for their opposing colors remain fresh and fully sensitive.
+* Our visual system processes colors in antagonistic pairs: **Red vs. Green**, **Blue vs. Yellow**, and **Black vs. White**.
+* While the receptors for the "funny" colors are inhibited/fatigued, the receptors for their opposing colors remain fresh and fully sensitive.
 
 3. **Resulting Perception**:
-   * When looking at a white sheet (which reflects all wavelengths), the fatigued receptors fail to respond fully, while the fresh "opponent" receptors fire strongly.
-   * As a result, your brain perceives the complementary colors:
-     * **Cyan** (distorted) → **Red** (afterimage)
-     * **Yellow** (distorted) → **Blue** (afterimage)
-     * **Black** (distorted) → **White** (afterimage)
+* When looking at a white sheet (which reflects all wavelengths), the fatigued receptors fail to respond fully, while the fresh "opponent" receptors fire strongly.
+* As a result, your brain perceives the complementary colors:
+   * **Cyan** (distorted) → **Red** (afterimage)
+   * **Yellow** (distorted) → **Blue** (afterimage)
+   * **Black** (distorted) → **White** (afterimage)
 
 **Conclusion**: Afterimages demonstrate that color perception is a dynamic process involving the balancing of opposing neural signals.
 
