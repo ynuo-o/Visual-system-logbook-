@@ -173,13 +173,26 @@ end
 end
  ```       
 
-After implementing the `Shear` function, a test was conducted using representative shear values in both directions.
+After implementing the `Shear` function, a test was conducted using representative shear values in both directions. In `Shear(I, 0.1, 0.5)`, 0.1 represents the horizontal shear factor and 0.5 represents the vertical shear factor, resulting in a stronger distortion in the vertical direction.
 The resulting image confirms that the `Shear` function operates correctly according to the task requirements
  ```matlab       
 S = Shear(I, 0.1, 0.5); 
 imshow(S)
  ```    
 <img src="5.png" width="300">
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
