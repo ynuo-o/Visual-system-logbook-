@@ -109,6 +109,7 @@ The brain hates "holes" in our vision, so it uses interpolation (filling in the 
   * The brain knows that Square B is part of a "white" checkerboard pattern.
   * It automatically "filters out" the shadow to determine what the actual surface color *should* be.
   * Consequently, the brain perceives B as lighter than it actually is to compensate for the darkness of the shadow.
+<img src="1.png" width="500">
 
 **Conclusion**: These tasks demonstrate that the brain is not a passive receiver of light; it is an active interpreter. It prioritizes "making sense" of the world (depth, shadow, object constancy) over literal accuracy.
 
