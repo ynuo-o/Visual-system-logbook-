@@ -102,12 +102,12 @@ end
 end
 ``` 
 
-After implementing the `Rotate` function, I conducted a test to verify its performance.
+After implementing the `Rotate` function, I conducted a test to verify its performance，using a rotation angle of 30 degrees ($\pi/6$ radians) 
 ```matlab
 J = Rotate(I, pi/6);  
 imshow(J)             
  ``` 
-
+<img src="4.png" width="300">
 
 
 
