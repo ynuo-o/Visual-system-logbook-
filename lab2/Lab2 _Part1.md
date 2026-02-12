@@ -195,6 +195,24 @@ The Cafe Wall illusion (also known as the Münsterberg illusion or kindergarten 
 
 **Conclusion**: The Spinning Dancer proves that when visual data is ambiguous and lacks depth cues, our brain makes assumptions based on established biases (like viewpoint elevation). Perception is not just a reflection of the image, but an active choice made by the visual cortex.
 
+### Task 9 – The Incomplete Triangles
+
+**Observation**
+
+Although no physically complete triangle is present in the image, most observers perceive a bright equilateral triangle formed by the arrangement of fragmented edges and circular cut-outs.
+
+**Explanation**
+
+This phenomenon is an example of illusory contours, commonly demonstrated by the Kanizsa triangle.  
+The visual system applies Gestalt principles of closure and good continuation, automatically completing missing boundaries to construct coherent shapes.
+
+Neurophysiological studies suggest that neurons in early visual cortex (e.g., V2) respond to these perceived contours even when no physical edge exists, indicating that perception is an active interpretative process rather than a direct reflection of retinal input.
+
+**Conclusion**
+
+The image contains no real triangles, yet a triangle is strongly perceived.  
+This demonstrates that visual perception relies on predictive completion and organizational principles, highlighting the constructive nature of the human visual system.
+
 
 
 
