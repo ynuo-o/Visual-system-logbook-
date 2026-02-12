@@ -112,10 +112,19 @@ RGB → HSV changes the colour space representation and data type (uint8 → dou
 * Value (V) represents brightness (luminance) of the image. The V channel visually resembles a grayscale image because it encodes overall light intensity.
 
 
+### Task 13 - Map RGB image to XYZ space
 
+In this task, the RGB image is converted into the **XYZ colour space** using the function `rgb2xyz()`.  
+The resulting XYZ image is examined and then separated into its **X**, **Y**, and **Z** components for visualisation.
 
+```matlab
+XYZ = rgb2xyz(RGB);
+imshow(XYZ)
 
+[X, Y, Z] = imsplit(XYZ);
+montage({X, Y, Z}, 'Size', [1 3])
+```
 
-
-
+<img src="6.png" width="300">
+<img src="7.png" width="500">
 
