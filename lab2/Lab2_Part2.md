@@ -43,7 +43,14 @@ Grayscale conversion is not a simple averaging of Red, Green, and Blue channels.
 * **Key Reason**: This formula accounts for the fact that the human eye has different sensitivities to different wavelengths. Specifically, the human eye is most sensitive to Green (hence the highest weight of 0.587) and least sensitive to Blue (the lowest weight of 0.114). By using these specific weights, the resulting grayscale image better preserves the perceived brightness (luminance) of the original color scene.
 
 
+### Task 11 - Splitting an RGB image into separate channels
 
+Dimensions and data type of the variables RGB, R, G, B and I.
+| Variable | Dimensions | Data Type | Description |
+|----------|------------|-----------|-------------|
+| **RGB** | M × N × 3 | uint8 | **3D Matrix:** Represents the image height (M), width (N), and the 3 color channels (Red, Green, Blue). |
+| **R, G, B** | M × N | uint8 | **2D Matrix:** Individual color components extracted from the RGB stack. |
+| **I** | M × N | uint8 | **2D Matrix:** The final grayscale image containing only luminance (intensity) values. |
 
 
 
