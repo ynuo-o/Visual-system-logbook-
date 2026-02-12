@@ -144,7 +144,37 @@ The brain hates "holes" in our vision, so it uses interpolation (filling in the 
 
 **Conclusion**: The Grid Illusion demonstrates that our perception of brightness is not absolute. It requires strong, high-contrast signals to trigger competitive neural processing (lateral inhibition), which the brain uses to enhance edge detection and contrast.
 
+### Task 8 - The Silhouette Illusion (Spinning Dancer) 
 
+**Experimental Observation (实验观察)**
+**The Phenomenon**: When watching the silhouette of a pirouetting female dancer, observers initially perceive her spinning in one direction (e.g., clockwise). 
+
+**Perceptual Shift**: After continued observation, the dancer may suddenly appear to spin in the opposite direction (counterclockwise), even though the stimulus remains unchanged.
+
+
+**Scientific Explanation**
+1. **Bistable Perception**: 
+* This is a kinetic, bistable optical illusion where the image is visually ambiguous. 
+* Because the image is a 2D silhouette, there are no depth cues (such as shadows on the body or surface details) to indicate whether her arms are passing in front of or behind her body. 
+* As a result, the brain can validly reconstruct the 3D motion in two different ways.
+
+2. **Psychological Biases**:
+* **Viewing-from-above Bias**: A study of over 1,600 participants showed that approximately two-thirds initially see the dancer rotating clockwise. This bias is attributed to the camera elevation, which is slightly above the horizontal plane, leading the brain to assume a viewpoint from above the dancer. 
+
+* **Brain Activation**: fMRI studies suggest that spontaneous perceptual switching in bistable motion is associated with activity across parietal and frontal attentional networks.
+
+3. **The "Right-Left Brain" Myth**:
+* In popular psychology, this illusion was incorrectly identified as a personality test to reveal hemisphere dominance. 
+* Scientific research has debunked this, confirming the effect is due to visual ambiguity and spontaneous brain fluctuations rather than personality traits.
+   
+
+**How to Trigger a Change in Direction**
+* **Averted Vision**: Look away slightly and use your peripheral vision to focus on the shadow or the spinning foot, then slowly move your eyes back.
+* **Mental Reframing**: Try to mentally visualize her outstretched arm passing *behind* her body instead of in front.
+* **Blinking**: Closing your eyes and envisioning the opposite direction before reopening them can help "reset" the brain's interpretation.
+
+
+**Conclusion**: The Spinning Dancer proves that when visual data is ambiguous and lacks depth cues, our brain makes assumptions based on established biases (like viewpoint elevation). Perception is not just a reflection of the image, but an active choice made by the visual cortex.
 
 
 
