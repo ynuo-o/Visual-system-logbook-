@@ -179,7 +179,7 @@ The resulting image confirms that the Rotate function operates correctly accordi
 S = Shear(I, 0.1, 0.5); 
 imshow(S)
  ```    
-
+<img src="5.png" width="300">
 
 
 
