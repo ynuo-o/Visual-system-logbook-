@@ -134,12 +134,13 @@ The brain hates "holes" in our vision, so it uses interpolation (filling in the 
 * The Grid Illusion is highly dependent on high contrast between the grid lines and the background.
 * In low-contrast images (like the pink/cyan grid), the luminance difference is reduced, making lateral inhibition much weaker.
 * Without sharp intensity differences, ganglion cells are not inhibited enough to reach the threshold of perception for "ghostly" spots.
-3. **Scintillating vs. Hermann Grid**:
-    * The Scintillating illusion requires global processes (linking and grouping features) in addition to local neural processes.
-    * The effect is most prominent with at least a $3 \times 3$ grid of intersections.
+3. **Scintillating vs. Hermann Grid**：
+* The scintillating grid illusion involves higher-level cortical processing and perceptual grouping in addition to local lateral inhibition mechanisms.
+* The strength of the effect increases with the number of grid intersections rather than requiring a fixed minimum grid size.  
 
 **Alternative Theories**
-* Some suggest the effect is caused by S1 type simple cells in the visual cortex or the involuntary movement of the physiological blind spot.
+* Some studies attribute the illusion to the responses of V1 simple cells combined with microsaccadic eye movements, rather than solely to retinal lateral inhibition.
+
 
 **Conclusion**: The Grid Illusion demonstrates that our perception of brightness is not absolute. It requires strong, high-contrast signals to trigger competitive neural processing (lateral inhibition), which the brain uses to enhance edge detection and contrast.
 
