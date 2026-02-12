@@ -178,7 +178,7 @@ The Cafe Wall illusion (also known as the Münsterberg illusion or kindergarten 
 * As a result, the brain can validly reconstruct the 3D motion in two different ways.
 
 2. **Psychological Biases**:
-* **Viewing-from-above Bias**: A study of over 1,600 participants showed that approximately two-thirds initially see the dancer rotating clockwise. This bias is attributed to the camera elevation, which is slightly above the horizontal plane, leading the brain to assume a viewpoint from above the dancer. 
+* **Viewing-from-above Bias**: Many observers initially report clockwise rotation, although perceived direction varies across individuals and stimulus conditions. This bias is attributed to the camera elevation, which is slightly above the horizontal plane, leading the brain to assume a viewpoint from above the dancer. 
 
 * **Brain Activation**: fMRI studies suggest that spontaneous perceptual switching in bistable motion is associated with activity across parietal and frontal attentional networks.
 
