@@ -52,7 +52,7 @@ In this task, we split the RGB image into its red, green, and blue channels usin
 montage({R, G, B}, 'Size', [1 3])
 ```
 
-<img src="4.png" width="300"> 
+<img src="4.png" width="500"> 
 
 **Workspace Variable Analysis (Dimensions & Data Type)**
 
@@ -69,8 +69,6 @@ I: 384 × 512, uint8
 
 **Key observation (dimensionality reduction)**: RGB (384×512×3) → R/G/B (384×512)
 * This demonstrates that splitting channels preserves the image resolution, while reducing data dimensionality from 3 channels → 1 channel per output.
-
-
 
 
 
