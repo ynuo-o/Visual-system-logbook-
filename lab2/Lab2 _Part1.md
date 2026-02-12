@@ -119,22 +119,16 @@ The brain hates "holes" in our vision, so it uses interpolation (filling in the 
 ### Task 6 - The Grid Illusion
 
 **Experimental Observations**
-**Scintillating Grid**: When staring at the center of the grid, dark dots appear to flash or "scintillate" rapidly at the white intersections in the peripheral vision. These dots disappear when looking directly at a specific intersection.
-
-**Hermann Grid**: Similar "ghostlike" grey blobs appear at the intersections of a white grid on a black background.
-
-**Low Contrast Case**: In the pink and cyan checkerboard image, these scintillating/ghostly dots are not observed, despite the grid-like structure.
+* **Scintillating Grid**: When staring at the center of the grid, dark dots appear to flash or "scintillate" rapidly at the white intersections in the peripheral vision. These dots disappear when looking directly at a specific intersection.
+* **Hermann Grid**: Similar "ghostlike" grey blobs appear at the intersections of a white grid on a black background.
 
 **Scientific Explanation**
 1. **Lateral Inhibition Theory**:
 * Visual intensity is determined by a group of receptors responding to a receptive field. 
 * A retinal ganglion cell excites when center receptors detect light, but is inhibited by receptors in the surrounding area.
 * Intersections are surrounded by more light-colored areas than the middle of a line; therefore, they experience increased inhibition, making them appear darker to the brain.
-2. **The Role of Contrast**:
-* The Grid Illusion is highly dependent on high contrast between the grid lines and the background.
-* In low-contrast images (like the pink/cyan grid), the luminance difference is reduced, making lateral inhibition much weaker.
-* Without sharp intensity differences, ganglion cells are not inhibited enough to reach the threshold of perception for "ghostly" spots.
-3. **Scintillating vs. Hermann Grid**：
+
+2. **Scintillating vs. Hermann Grid**：
 * The scintillating grid illusion involves higher-level cortical processing and perceptual grouping in addition to local lateral inhibition mechanisms.
 * The strength of the effect increases with the number of grid intersections rather than requiring a fixed minimum grid size.  
 
