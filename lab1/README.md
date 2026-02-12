@@ -174,7 +174,7 @@ end
  ```       
 
 After implementing the `Shear` function, a test was conducted using representative shear values in both directions.
-The resulting image confirms that the Rotate function operates correctly according to the task requirements
+The resulting image confirms that the `Shear` function operates correctly according to the task requirements
  ```matlab       
 S = Shear(I, 0.1, 0.5); 
 imshow(S)
