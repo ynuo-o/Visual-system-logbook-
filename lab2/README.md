@@ -64,9 +64,9 @@ The brain hates "holes" in our vision, so it uses interpolation (filling in the 
 3. **Resulting Perception**:
 * When looking at a white sheet (which reflects all wavelengths), the fatigued receptors fail to respond fully, while the fresh "opponent" receptors fire strongly.
 * As a result, your brain perceives the complementary colors:
-   * **Cyan** (distorted) → **Red** (afterimage)
-   * **Yellow** (distorted) → **Blue** (afterimage)
-   * **Black** (distorted) → **White** (afterimage)
+   * Cyan (distorted) → Red (afterimage)
+   * Yellow (distorted) → Blue (afterimage)
+   * Black (distorted) → White (afterimage)
 
 **Conclusion**: Afterimages demonstrate that color perception is a dynamic process involving the balancing of opposing neural signals.
 
