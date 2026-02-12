@@ -128,3 +128,36 @@ montage({X, Y, Z}, 'Size', [1 3])
 <img src="6.png" width="300">
 <img src="7.png" width="500">
 
+**Workspace Variable Analysis (Dimensions & Data Type)**
+
+RGB: 384 × 512 × 3, uint8
+* Original device-dependent colour image stored using integer intensities in the range 0–255.
+
+XYZ: 384 × 512 × 3, double
+* Device-independent colour representation derived from human colour-matching experiments.
+* Values are represented in floating-point form, typically normalised for computation.
+
+X, Y, Z: each 384 × 512, double
+* Single-channel images corresponding to the three CIE XYZ components.
+* Spatial resolution is preserved, while only the colour representation changes.
+
+**Key observation**:
+RGB → XYZ changes the colour space and data type (uint8 → double), but does not change spatial dimensions.
+
+**Visual Observation (Meaning of X, Y, and Z)**
+
+X channel
+* Represents a combination of red and green colour responses in the human visual model.
+* It does not correspond directly to a visible primary colour.
+
+Y channel
+* Closely corresponds to perceived luminance (brightness) of the scene.
+* Visually, the Y image resembles a grayscale intensity image, reflecting how humans perceive lightness.
+
+Z channel
+* Primarily associated with blue wavelength sensitivity and typically contributes less to perceived brightness,
+* resulting in a generally darker appearance.
+
+
+
+
