@@ -20,10 +20,10 @@
 
 #### 3. The "Filling-In" Phenomenon (Brain Interpolation)
 The brain hates "holes" in our vision, so it uses interpolation (filling in the gaps) to create a seamless image.
-| Scenario | Input Pattern | Resulting Perception |
-| :--- | :--- | :--- |
-| **Solid Background** | Solid red background with a dot. | The dot disappears and is replaced by a solid red surface. |
-| **Geometric Lines** | Two intersecting lines. | The brain completes the broken lines, showing a perfect cross. |
-| **Complex Textures** | Blue and black zebra stripes. | The brain reconstructs the stripe pattern across the blind spot. |
+| Visual Context | What the Brain Does | 
+| :--- | :--- | 
+| **Solid Background** | Fills the blind spot with the surrounding color (e.g., making it look solid red). |
+| **Geometric Lines** | Completes broken lines so they appear continuous through the blind spot. |
+| **Complex Textures** | Perfectly replicates textures (like zebra stripes) to hide the missing area. |
 
-
+**Key Takeaway**: What we perceive as "reality" is actually a combination of raw data from our eyes and active construction/editing by our brain. We don't see the world exactly as it is; we see a "corrected" version of it.
