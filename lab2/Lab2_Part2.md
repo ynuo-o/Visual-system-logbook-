@@ -78,5 +78,44 @@ The montage shows three grayscale-looking images corresponding to the R, G, and 
 * Yellow/green peppers show relatively stronger signals in R and G.
 * White objects (e.g., garlic) appear bright in all three channels, because white reflects strongly across red, green, and blue wavelengths.
 
+### Task 12 - Map RGB image to HSV space and into separate channels
+In this task, the RGB image is converted into the HSV colour space using the function `rgb2hsv()`.  
+The HSV image is then split into its **Hue (H)**, **Saturation (S)**, and **Value (V)** components, and displayed side-by-side as a montage.
+
+```matlab
+HSV = rgb2hsv(RGB);
+[H, S, V] = imsplit(HSV);
+montage({H, S, V}, 'Size', [1 3])
+```
+<img src="5.png" width="500">
+
+**Workspace Variable Analysis (Dimensions & Data Type)**
+
+RGB: 384 × 512 × 3, uint8
+* Original colour image stored in integer intensity values (0–255).
+
+HSV: 384 × 512 × 3, double
+* Converted colour representation where values are normalised to the range [0, 1].
+
+H, S, V: each 384 × 512, double
+* Single-channel intensity images representing the three HSV components.
+* Spatial resolution is preserved, while the colour representation changes.
+
+**Key observation**:
+RGB → HSV changes the colour space representation and data type (uint8 → double), but does not change spatial dimensions.
+
+**Visual Observation (Meaning of H, S, and V)**
+* Hue (H) represents the dominant colour type (e.g., red, green, blue). Regions with similar colours appear with similar intensity in the H image.
+
+* Saturation (S) represents colour purity or vividness. Highly coloured regions appear brighter, while white/grey areas appear dark due to low saturation.
+
+* Value (V) represents brightness (luminance) of the image. The V channel visually resembles a grayscale image because it encodes overall light intensity.
+
+
+
+
+
+
+
 
 
