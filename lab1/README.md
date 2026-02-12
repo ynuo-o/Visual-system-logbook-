@@ -40,7 +40,7 @@ The function `Rotate(In, Theta)` performs geometric rotation of a grayscale imag
 function [Out] = Rotate(In, Theta)
  ```
 
-#### Step 1 Image Size and Output Initialisation
+#### Step 1 - Image Size and Output Initialisation
 To begin, I needed to define the environment for the rotation. This involves gathering the input dimensions and preparing a destination matrix that matches those dimensions exactly.
 The dimensions of the input image are obtained using:
 ```matlab
@@ -52,7 +52,7 @@ Out = zeros(rows, cols);
  ```
 
 
-#### Step 2 Define rotation centre and Inverse matrix
+#### Step 2 - Define rotation centre and Inverse matrix
 
 First, we calculate the geometric center of the image to allows rotation to occur around the true geometric centre rather than the top-left corner. Since MATLAB uses 1-based indexing, the formula `(cols + 1) / 2` and `(rows + 1) / 2`  is used to precisely locate the geometric centre, ensuring the rotation is perfectly symmetrical without any spatial drift.
 ```matlab
@@ -66,7 +66,7 @@ R⁻¹ = [ cos(Theta)   sin(Theta)
        -sin(Theta)   cos(Theta) ]
  ``` 
 
-#### Step 3 The Reverse Mapping Loop
+#### Step 3 - The Reverse Mapping Loop
 For every pixel in the destination image, I calculate its "parent" location in the source image using a three-step transformation: Translate to Origin $\rightarrow$ Rotate $\rightarrow$ Translate back.
 
 ```matlab
@@ -108,6 +108,80 @@ J = Rotate(I, pi/6);
 imshow(J)             
  ``` 
 <img src="4.png" width="300">
+
+### Task 2 - Image Shearing
+#### Image Shearing Using Reverse Mapping
+The function `Shear(In, Xshear, Yshear)` performs geometric shearing of a grayscale image about its centre using a reverse mapping strategy with nearest-neighbour interpolation. The transformation is applied in both horizontal and vertical directions while preserving the original image dimensions.
+
+```matlab
+function [Out] = Shear(In, Xshear, Yshear)
+ ``` 
+
+#### Step 1 – Image Size and Output Initialisation
+To begin, the spatial dimensions of the input image must be obtained so that the destination image can be created with identical size. This ensures that the sheared output maintains the same spatial resolution as the original image and that unmapped pixels can be displayed as black (0).
+```matlab
+[rows, cols] = size(In);
+Out = zeros(rows, cols);
+ ``` 
+#### Step 2 – Define Shearing Centre and Inverse Matrix
+Shearing must occur about the geometric centre of the image rather than the top-left corner. Using MATLAB’s 1-based indexing, the precise image centre is calculated as:
+```matlab
+cx = (cols + 1) / 2;
+cy = (rows + 1) / 2;
+ ``` 
+To avoid holes in the destination image, reverse mapping is used. Therefore, the inverse of the shear matrix is computed:
+```matlab
+A = [1,      Xshear;
+     Yshear, 1     ];
+
+A_inv = inv(A);
+ ```
+#### Step 3 – Reverse Mapping Loop
+For every pixel in the destination image, the corresponding source coordinate is calculated through a three-step transformation:
+
+Translate to centre → Apply inverse shear → Translate back
+```matlab
+for y_d = 1:rows
+    for x_d = 1:cols
+        
+        % Shift destination pixel to centre coordinates
+        coord_d = [x_d - cx; 
+                   y_d - cy];
+        
+        % Reverse map to find source coordinate (centre-relative)
+        coord_s = A_inv * coord_d;
+        
+        % Shift back to image coordinates
+        x_s = coord_s(1) + cx;
+        y_s = coord_s(2) + cy;
+ ```
+Because mapped source coordinates are generally non-integer, nearest-neighbour interpolation is applied:
+ ```matlab       
+        x_sn = round(x_s);
+        y_sn = round(y_s);
+ ```        
+If the mapped coordinate lies within the valid image bounds, the grayscale intensity is copied from the source image. Otherwise, the destination pixel is assigned the value 0 (black).
+ ```matlab       
+ if (x_sn >= 1) && (x_sn <= cols) && (y_sn >= 1) && (y_sn <= rows)
+            Out(y_d, x_d) = In(y_sn, x_sn);
+        else
+            Out(y_d, x_d) = 0;
+        end
+        
+    end
+end
+end
+ ```       
+
+After implementing the `Shear` function, a test was conducted using representative shear values in both directions.
+The resulting image confirms that the Rotate function operates correctly according to the task requirements
+
+
+
+
+
+
+
 
 
 
