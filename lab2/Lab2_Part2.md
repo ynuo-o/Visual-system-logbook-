@@ -28,5 +28,18 @@ title('Original colour image (left) grayscale image (right)');
 ```
 `montage` is a visualization parameter that displays the two images side-by-side in the same figure window.
 
+**Principle of Grayscale Conversion**
+
+Grayscale conversion is not a simple averaging of Red, Green, and Blue channels. Instead, it is a weighted sum based on human visual perception.
+* **The Formula: $I = 0.299R + 0.587G + 0.114B$**
+* **Key Reason**: This formula accounts for the fact that the human eye has different sensitivities to different wavelengths. Specifically, the human eye is most sensitive to Green (hence the highest weight of 0.587) and least sensitive to Blue (the lowest weight of 0.114). By using these specific weights, the resulting grayscale image better preserves the perceived brightness (luminance) of the original color scene.
+
+
+
+
+
+
+
+
 
 
