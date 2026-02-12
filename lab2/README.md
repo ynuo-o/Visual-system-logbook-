@@ -116,7 +116,32 @@ The brain hates "holes" in our vision, so it uses interpolation (filling in the 
 **Conclusion**: These tasks demonstrate that the brain is not a passive receiver of light; it is an active interpreter. It prioritizes "making sense" of the world (depth, shadow, object constancy) over literal accuracy.
 
 
+### Task 6 - The Grid Illusion
 
+**Experimental Observations**
+**Scintillating Grid**: When staring at the center of the grid, dark dots appear to flash or "scintillate" rapidly at the white intersections in the peripheral vision. These dots disappear when looking directly at a specific intersection.
+
+**Hermann Grid**: Similar "ghostlike" grey blobs appear at the intersections of a white grid on a black background.
+
+**Low Contrast Case**: In the pink and cyan checkerboard image, these scintillating/ghostly dots are not observed, despite the grid-like structure.
+
+**Scientific Explanation**
+1. **Lateral Inhibition Theory**:
+* Visual intensity is determined by a group of receptors responding to a receptive field. 
+* A retinal ganglion cell excites when center receptors detect light, but is inhibited by receptors in the surrounding area.
+* Intersections are surrounded by more light-colored areas than the middle of a line; therefore, they experience increased inhibition, making them appear darker to the brain.
+2. **The Role of Contrast**:
+* The Grid Illusion is highly dependent on high contrast between the grid lines and the background.
+* In low-contrast images (like the pink/cyan grid), the luminance difference is reduced, making lateral inhibition much weaker.
+* Without sharp intensity differences, ganglion cells are not inhibited enough to reach the threshold of perception for "ghostly" spots.
+3. **Scintillating vs. Hermann Grid**:
+    * The Scintillating illusion requires global processes (linking and grouping features) in addition to local neural processes.
+    * The effect is most prominent with at least a $3 \times 3$ grid of intersections.
+
+**Alternative Theories**
+* Some suggest the effect is caused by S1 type simple cells in the visual cortex or the involuntary movement of the physiological blind spot.
+
+**Conclusion**: The Grid Illusion demonstrates that our perception of brightness is not absolute. It requires strong, high-contrast signals to trigger competitive neural processing (lateral inhibition), which the brain uses to enhance edge detection and contrast.
 
 
 
