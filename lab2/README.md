@@ -46,7 +46,7 @@ The brain hates "holes" in our vision, so it uses interpolation (filling in the 
 | **M-cones** | Deuteranopia / Deuteranomaly | Difficulty perceiving green light. |
 
 
-#### Task 3 - Reverse Colour
+### Task 3 - Reverse Colour
 
 **Experimental Observation**
 * **Stimulus**: Staring at a distorted American flag (e.g., cyan, black, and yellow) for an extended period.
