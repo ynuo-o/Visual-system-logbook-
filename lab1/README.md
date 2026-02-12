@@ -102,7 +102,7 @@ end
 end
 ``` 
 
-After implementing the `Rotate` function, I conducted a test to verify its performance，using a rotation angle of 30 degrees ($\pi/6$ radians) 
+After implementing the `Rotate` function, I conducted a test to verify its performance，using a rotation angle of 30 degrees ($\pi/6$ radians). The resulting image confirms that the Rotate function operates correctly according to the task requirements
 ```matlab
 J = Rotate(I, pi/6);  
 imshow(J)             
