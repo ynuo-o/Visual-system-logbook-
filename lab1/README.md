@@ -39,7 +39,7 @@ The function `Rotate(In, Theta)` performs geometric rotation of a grayscale imag
 
 The size of the input image is obtained to ensure that the output image `Out` is created with the same spatial dimensions, as required by the task. 
 
-#### Step 1 - Image Size and Output Initialisation
+#### Step 1 Image Size and Output Initialisation
 To begin, I needed to define the environment for the rotation. This involves gathering the input dimensions and preparing a destination matrix that matches those dimensions exactly.
 The dimensions of the input image are obtained using:
 ```matlab
@@ -51,15 +51,13 @@ Out = zeros(rows, cols);
  ```
 
 
-#### Step 2 Rotation About the Image Centre
+#### Step 2 Define rotation centre and Inverse matrix
 
-Rotation matrices operate around the **origin (0,0)**.  
-To rotate the image about its **true geometric centre**, the centre coordinates are computed as:
+First, we calculate the geometric center of the image to allows rotation to occur around the true geometric centre rather than the top-left corner. Since MATLAB uses 1-based indexing, the formula `(cols + 1) / 2` and `(rows + 1) / 2`  is used to precisely locate the geometric centre, ensuring the rotation is perfectly symmetrical without any spatial drift.
 ```matlab
 cx = (cols + 1) / 2  
 cy = (rows + 1) / 2
  ``` 
-which allows rotation to occur around the true geometric centre rather than the top-left corner.
 
 To avoid the holes and pixel overlaps produced by forward mapping, the algorithm applies the inverse rotation matrix:
 ```matlab
@@ -67,6 +65,7 @@ R⁻¹ = [ cos(Theta)   sin(Theta)
        -sin(Theta)   cos(Theta) ]
  ``` 
 
+#### Step 3 Define rotation centre and Inverse matrix
 Then, for each pixel in the destination image, the corresponding source coordinate is calculated by:
 1. Translating the pixel so the origin is at the image centre
 2. Applying the inverse rotation
