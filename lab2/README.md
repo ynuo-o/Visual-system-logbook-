@@ -58,13 +58,13 @@ The brain hates "holes" in our vision, so it uses interpolation (filling in the 
 * This leads to a temporary decrease in their sensitivity.
 
 2. **Opponent Process Theory**:
-* Our visual system processes colors in antagonistic pairs: **Red vs. Green**, **Blue vs. Yellow**, and **Black vs. White**.
+* Our visual system processes colors in antagonistic pairs: Red vs. Green, Blue vs. Yellow, and Black vs. White.
 * While the receptors for the "funny" colors are inhibited/fatigued, the receptors for their opposing colors remain fresh and fully sensitive.
 
 3. **Resulting Perception**:
 * When looking at a white sheet (which reflects all wavelengths), the fatigued receptors fail to respond fully, while the fresh "opponent" receptors fire strongly.
 * As a result, your brain perceives the complementary colors:
-   * Cyan (distorted) → Red (afterimage)
+   * Green (distorted) → Red (afterimage)
    * Yellow (distorted) → Blue (afterimage)
 
 **Conclusion**: Afterimages demonstrate that color perception is a dynamic process involving the balancing of opposing neural signals.
@@ -72,23 +72,23 @@ The brain hates "holes" in our vision, so it uses interpolation (filling in the 
 ### Task 4 - Troxler's Fading 
 
 **Experimental Observations**
-* **Lilac Chaser Test**: Staring at the central black cross causes the rotating gap to appear as a **green** moving spot. Eventually, the surrounding magenta spots disappear entirely, leaving only a grey background.
+* **Lilac Chaser Test**: Staring at the central black cross causes the rotating gap to appear as a green moving spot. Eventually, the surrounding magenta spots disappear entirely, leaving only a grey background.
 * **Fading Experiment**: Staring at a central red dot causes the surrounding fuzzy blue/grey ring to gradually fade and blend into the white background.
 
 **Scientific Explanation**
 1. **Neural Adaptation (The Core Reason)**:
-   * Our sensory system is designed to detect **changes** rather than constants. 
-   * When a stimulus in the peripheral vision remains unchanging (stationary and blurred), the neurons responsible for perceiving it stop firing after a few seconds.
-   * This is a "filtering" mechanism that prevents the brain from being overwhelmed by non-essential, constant information.
+* Our sensory system is designed to detect changes rather than constants. 
+* When a stimulus in the peripheral vision remains unchanging (stationary and blurred), the neurons responsible for perceiving it stop firing after a few seconds.
+* This is a "filtering" mechanism that prevents the brain from being overwhelmed by non-essential, constant information.
 
 2. **The "Green" Spot (Afterimage Connection)**:
-   * Similar to Task 3, as the magenta/lilac spots fatigue the receptors, the brain perceives the opponent color (**Green**) in the empty space where the spot just was.
+* Similar to Task 3, as the magenta/lilac spots fatigue the receptors, the brain perceives the opponent color (Green) in the empty space where the spot just was.
 
 3. **Relationship to the Visual System**:
-   * Troxler’s fading highlights that our brain constantly "ignores" stable images on our retina (like the shadows of blood vessels inside the eye). 
-   * Small, involuntary eye movements (microsaccades) usually prevent this fading in daily life by shifting the image slightly across different photoreceptors.
+* Troxler’s fading highlights that our brain constantly "ignores" stable images on our retina (like the shadows of blood vessels inside the eye). 
+* Small, involuntary eye movements (microsaccades) usually prevent this fading in daily life by shifting the image slightly across different photoreceptors.
 
-**Conclusion**: Troxler's fading proves that perception is heavily dependent on **change**. If a visual signal is constant and lacks sharp edges, the brain eventually "deletes" it from our conscious awareness.
+**Conclusion**: Troxler's fading proves that perception is heavily dependent on change. If a visual signal is constant and lacks sharp edges, the brain eventually "deletes" it from our conscious awareness.
 
 
 
