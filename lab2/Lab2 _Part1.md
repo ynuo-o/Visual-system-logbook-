@@ -146,7 +146,7 @@ The brain hates "holes" in our vision, so it uses interpolation (filling in the 
 
 ### Task 8 - The Silhouette Illusion (Spinning Dancer) 
 
-**Experimental Observation (实验观察)**
+**Experimental Observation**
 **The Phenomenon**: When watching the silhouette of a pirouetting female dancer, observers initially perceive her spinning in one direction (e.g., clockwise). 
 
 **Perceptual Shift**: After continued observation, the dancer may suddenly appear to spin in the opposite direction (counterclockwise), even though the stimulus remains unchanged.
