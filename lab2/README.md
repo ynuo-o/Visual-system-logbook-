@@ -90,7 +90,27 @@ The brain hates "holes" in our vision, so it uses interpolation (filling in the 
 
 **Conclusion**: Troxler's fading proves that perception is heavily dependent on change. If a visual signal is constant and lacks sharp edges, the brain eventually "deletes" it from our conscious awareness.
 
+### Task 5 - Brain sees what it expects (Visual Illusions)
 
+**Experiment 1: Shepard Tables (Size Perception)**
+**Observation**: The blue table appears to be long and thin, while the red table appears to be shorter and more square. However, measuring them reveals the tabletops are identical in size and shape.
+
+**Scientific Explanation**:
+* Perspective Cues: Our brain interprets the 2D image as 3D objects. 
+* The vertical orientation of the blue table suggests depth, making the brain "compensate" by perceiving it as longer. 
+* This is known as Size Constancy —the brain adjusts the perceived size based on the perceived distance and angle.
+
+**Experiment 2: Checker Shadow Illusion (Brightness Perception)**
+**Observation**: Square A looks significantly darker than Square B. In reality, both squares are the exact same shade of grey.
+
+**Scientific Explanation**:
+* Shadow Compensation: The brain identifies that Square B is in the shadow of the green cylinder.
+* Local Contrast vs. Global Expectation: 
+  * The brain knows that Square B is part of a "white" checkerboard pattern.
+  * It automatically "filters out" the shadow to determine what the actual surface color *should* be.
+  * Consequently, the brain perceives B as lighter than it actually is to compensate for the darkness of the shadow.
+
+**Conclusion**: These tasks demonstrate that the brain is not a passive receiver of light; it is an active interpreter. It prioritizes "making sense" of the world (depth, shadow, object constancy) over literal accuracy.
 
 
 
