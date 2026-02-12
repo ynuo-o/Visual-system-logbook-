@@ -197,21 +197,33 @@ The Cafe Wall illusion (also known as the Münsterberg illusion or kindergarten 
 
 ### Task 9 – The Incomplete Triangles
 
-**Observation**
 
-Although no physically complete triangle is present in the image, most observers perceive a bright equilateral triangle formed by the arrangement of fragmented edges and circular cut-outs.
+**Experimental Observation**
 
-**Explanation**
+**The Phenomenon**:  When viewing the image, many observers perceive a bright illusory triangle that appears to occlude the fragmented circular and angular elements.  
 
-This phenomenon is an example of illusory contours, commonly demonstrated by the Kanizsa triangle.  
-The visual system applies Gestalt principles of closure and good continuation, automatically completing missing boundaries to construct coherent shapes.
+**The Reality**: In reality, there are zero complete triangles physically present. The image consists only of three “Pac-Man”-like shapes and three V-shaped line segments.  
 
-Neurophysiological studies suggest that neurons in early visual cortex (e.g., V2) respond to these perceived contours even when no physical edge exists, indicating that perception is an active interpretative process rather than a direct reflection of retinal input.
 
-**Conclusion**
+**Scientific Explanation**
+1. **Gestalt Principle of Closure**: The visual system has a natural tendency to organize incomplete elements into coherent wholes.  
+It perceptually “fills in” missing boundaries between disconnected components to form a familiar geometric structure.  
 
-The image contains no real triangles, yet a triangle is strongly perceived.  
-This demonstrates that visual perception relies on predictive completion and organizational principles, highlighting the constructive nature of the human visual system.
+
+2. **Subjective (Illusory) Contours**: The brain generates illusory contours—perceived edges that are not physically present on the retina.  Neurophysiological evidence shows that neurons in intermediate visual areas (e.g., V2) respond to these inferred boundaries, indicating that contour perception is actively constructed rather than directly sensed.  
+
+
+3. **Brightness Perception**: The central illusory triangle often appears brighter than the uniform background, despite identical physical luminance. This reflects contextual brightness processing and surface completion within mid-level vision.  
+
+
+**Conclusions**
+
+1. **Perception as Construction**: This illusion demonstrates that visual perception is not a passive recording of sensory input but an active process that organizes fragmented information into coherent forms.  
+
+
+2. **Mid-level and Top-down Influences**: Gestalt completion and neural responses to illusory contours provide the primary mechanism for the perceived triangle, while prior knowledge can further bias interpretation.  
+
+
 
 
 
