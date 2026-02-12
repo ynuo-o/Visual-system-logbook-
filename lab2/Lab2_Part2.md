@@ -45,16 +45,40 @@ Grayscale conversion is not a simple averaging of Red, Green, and Blue channels.
 
 ### Task 11 - Splitting an RGB image into separate channels
 
-Dimensions and data type of the variables RGB, R, G, B and I.
-| Variable | Dimensions | Data Type | Description |
-|----------|------------|-----------|-------------|
-| **RGB** | M × N × 3 | uint8 | **3D Matrix:** Represents the image height (M), width (N), and the 3 color channels (Red, Green, Blue). |
-| **R, G, B** | M × N | uint8 | **2D Matrix:** Individual color components extracted from the RGB stack. |
-| **I** | M × N | uint8 | **2D Matrix:** The final grayscale image containing only luminance (intensity) values. |
+In this task, we split the RGB image into its red, green, and blue channels using the function `imsplit()`, and then display the three channel images side-by-side as a montage.
+
+```matlab
+[R, G, B] = imsplit(RGB);
+montage({R, G, B}, 'Size', [1 3])
+```
+
+<img src="4.png" width="300"> 
+
+**Workspace Variable Analysis (Dimensions & Data Type)**
+
+RGB: 384 × 512 × 3, uint8
+* A 3D array representing the full colour image: height 384 (rows), width 512 (columns), and 3 colour channels.
+
+R, G, B: each 384 × 512, uint8
+* Each channel is extracted as a 2D intensity matrix (single channel).
+* Spatial resolution stays the same (384 × 512), but the third dimension is removed because each output stores only one channel.
+
+I: 384 × 512, uint8
+* A 2D grayscale (intensity) image.
+* Same spatial size as the original image, but only a single luminance/intensity value per pixel.
+
+**Key observation (dimensionality reduction)**: RGB (384×512×3) → R/G/B (384×512)
+* This demonstrates that splitting channels preserves the image resolution, while reducing data dimensionality from 3 channels → 1 channel per output.
 
 
 
 
+
+**Visual Observation (Channel behaviour)**
+The montage shows three grayscale-looking images corresponding to the R, G, and B channel intensities:
+* Objects that are red (e.g., red peppers) appear brightest in the R channel.
+* Yellow/green peppers show relatively stronger signals in R and G.
+* White objects (e.g., garlic) appear bright in all three channels, because white reflects strongly across red, green, and blue wavelengths.
 
 
 
