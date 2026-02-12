@@ -27,3 +27,22 @@ The brain hates "holes" in our vision, so it uses interpolation (filling in the 
 | **Complex Textures** | Perfectly replicates textures (like zebra stripes) to hide the missing area. |
 
 **Key Takeaway**: What we perceive as "reality" is actually a combination of raw data from our eyes and active construction/editing by our brain. We don't see the world exactly as it is; we see a "corrected" version of it.
+
+### Task 2 - Ishihara Colour Test
+
+**Purpose and Mechanism**
+* The Ishihara test is a color perception test for red-green color deficiencies.
+* It specifically targets deficiencies in the **long-wavelength (L) cones** and **medium-wavelength (M) cones**.
+* The test consists of a series of **pseudo-isochromatic plates**, which contain a circle of dots appearing randomized in color and size.
+
+**Biological Goal**
+* The test evaluates the ability to distinguish a figure (usually a number) from the background based solely on color contrast.
+* Within the pattern, dots of specific hues form a number that is visible to those with normal color vision but difficult or impossible to see for those with color blindness.
+
+**Key Metrics**
+| Test Element | Targeted Deficiency | Clinical Significance |
+| :--- | :--- | :--- |
+| **L-cones** | Protanopia / Protanomaly | Difficulty perceiving red light. |
+| **M-cones** | Deuteranopia / Deuteranomaly | Difficulty perceiving green light. |
+
+---
