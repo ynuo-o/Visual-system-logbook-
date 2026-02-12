@@ -26,3 +26,7 @@ We can display them side-by-side with `imshowpair( )` and add a title, so that i
 imshowpair(RGB, I, 'montage')
 title('Original colour image (left) grayscale image (right)');
 ```
+`montage` is a visualization parameter that displays the two images side-by-side in the same figure window.
+
+
+
