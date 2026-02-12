@@ -12,6 +12,9 @@ imshow(RGB)
 
 <img src="2.png" width="300"> 
 
+**Explanation**: The RGB image is represented as a three-dimensional matrix of size M-by-N-by-3. The third dimension corresponds to the red, green, and blue color channels. Each pixel’s final color is determined by the intensity values across these three channels.
+
+
 We can converts RGB values to grayscale values by using the function `rgb2gray()`, whic forming a weighted sum of the R, G, and B components according to the equation `I = 0.299 * R + 0.587 * G + 0.114 * B`
 
 ```matlab
@@ -20,6 +23,11 @@ figure
 imshow(I)
 ```
 <img src="3.png" width="300"> 
+
+**Explanation**: The grayscale image I is represented as a two-dimensional M-by-N matrix. Instead of storing three color channels, the RGB values are converted into a single luminance value using a weighted combination of red, green, and blue intensities. This representation reduces data dimensionality and improves computational efficiency for image processing tasks.
+
+
+
 
 We can display them side-by-side with `imshowpair( )` and add a title, so that it would be easier to compare two photo.
 ```matlab
