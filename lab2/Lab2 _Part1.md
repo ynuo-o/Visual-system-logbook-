@@ -138,6 +138,31 @@ The brain hates "holes" in our vision, so it uses interpolation (filling in the 
 
 **Conclusion**: The Grid Illusion demonstrates that our perception of brightness is not absolute. It requires strong, high-contrast signals to trigger competitive neural processing (lateral inhibition), which the brain uses to enhance edge detection and contrast.
 
+
+### Task 7 - Cafe Wall Illusion
+The Cafe Wall illusion (also known as the Münsterberg illusion or kindergarten illusion) was first described by Hugo Münsterberg in 1894 and later named after a cafe wall in Bristol in 1973.
+
+**Experimental Observation**
+* **The Illusion**: In the image of staggered rows with alternating black and white rectangles, the straight horizontal dividing lines appear to be sloped or wedge-shaped, even though they are perfectly parallel.
+* **The Role of Contrast**: This phenomenon is not observed when the black and white are replaced by different colors of the same brightness or lower contrast (e.g., the pink and cyan checkerboard).
+
+
+**Scientific Explanation**
+1. **Irradiation and Spatial Filtering**:
+* Early accounts linked the illusion to the irradiation effect, where bright regions appear larger than dark regions.
+* However, contemporary research suggests the illusion is more accurately explained by interactions between luminance contrast, spatial filtering, and orientation-selective mechanisms** in early visual cortex.
+
+ 
+2. **Contrast Polarities**: 
+* Contrast polarities between the "bricks" (the colored rectangles) and the "mortar" (the dividing lines) appear to be the determining factor in the direction of the perceived tilt.
+
+3. **Neural Components**: 
+* While components of the illusion remain even when optical and retinal factors are removed, it is heavily dependent on the high-contrast interaction between different color levels.
+  
+**Conclusion**: our brain uses contrast and brightness boundaries to define geometric relationships. When contrast is high, "errors" like the irradiation illusion can distort our perception of parallel lines, but these errors disappear in low-contrast environments.
+
+
+
 ### Task 8 - The Silhouette Illusion (Spinning Dancer) 
 
 **Experimental Observation**
