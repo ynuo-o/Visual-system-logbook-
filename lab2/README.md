@@ -66,7 +66,6 @@ The brain hates "holes" in our vision, so it uses interpolation (filling in the 
 * As a result, your brain perceives the complementary colors:
    * Cyan (distorted) → Red (afterimage)
    * Yellow (distorted) → Blue (afterimage)
-   * Black (distorted) → White (afterimage)
 
 **Conclusion**: Afterimages demonstrate that color perception is a dynamic process involving the balancing of opposing neural signals.
 
