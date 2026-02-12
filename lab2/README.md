@@ -93,6 +93,7 @@ The brain hates "holes" in our vision, so it uses interpolation (filling in the 
 ### Task 5 - Brain sees what it expects (Visual Illusions)
 
 **Experiment 1: Shepard Tables (Size Perception)**
+
 **Observation**: The blue table appears to be long and thin, while the red table appears to be shorter and more square. However, measuring them reveals the tabletops are identical in size and shape.
 
 **Scientific Explanation**:
@@ -101,6 +102,7 @@ The brain hates "holes" in our vision, so it uses interpolation (filling in the 
 * This is known as Size Constancy —the brain adjusts the perceived size based on the perceived distance and angle.
 
 **Experiment 2: Checker Shadow Illusion (Brightness Perception)**
+
 **Observation**: Square A looks significantly darker than Square B. In reality, both squares are the exact same shade of grey.
 
 **Scientific Explanation**:
