@@ -65,11 +65,24 @@ R⁻¹ = [ cos(Theta)   sin(Theta)
        -sin(Theta)   cos(Theta) ]
  ``` 
 
-#### Step 3 Define rotation centre and Inverse matrix
-Then, for each pixel in the destination image, the corresponding source coordinate is calculated by:
-1. Translating the pixel so the origin is at the image centre
-2. Applying the inverse rotation
-3. Translating the coordinate back to the original reference frame
+#### Step 3 The Reverse Mapping Loop
+For every pixel in the destination image, I calculate its "parent" location in the source image using a three-step transformation: Translate to Origin $\rightarrow$ Rotate $\rightarrow$ Translate back.
+
+```matlab
+for y_d = 1:rows
+    for x_d = 1:cols
+
+        % Shift origin to image centre
+        coord_d = [x_d - cx; y_d - cy];
+
+        % Apply inverse rotation to find source coordinate
+        coord_s = R_inv * coord_d;
+
+        % Shift back to original coordinate system
+        x_s = coord_s(1) + cx;
+        y_s = coord_s(2) + cy;
+ ``` 
+
 Because source coordinates are generally non-integer, the nearest-neighbour rule is used:
 ```matlab
 x_nn = round(x_s)  
@@ -77,7 +90,16 @@ y_nn = round(y_s)
  ``` 
 If the mapped source pixel lies inside the image bounds, its grayscale intensity is copied to the destination pixel.
 Otherwise, the destination pixel is assigned the value 0 (black), ensuring valid output for out-of-range mappings.
-
+```matlab        
+        if x_nn >= 1 && x_nn <= cols && y_nn >= 1 && y_nn <= rows
+            Out(y_d, x_d) = In(y_nn, x_nn);
+        else
+            Out(y_d, x_d) = 0; % paint black if outside
+        end
+    end
+end
+end
+``` 
 
 
 
