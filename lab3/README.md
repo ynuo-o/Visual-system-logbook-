@@ -150,6 +150,7 @@ imshowpair(f, g, "montage")
 * Therefore, this transformation is particularly suitable for medical X-ray visualisation, where subtle structural differences must be emphasised without amplifying noise excessively.
 
 ### Task 3 – Contrast Enhancement using Histogram
+#### PLotting the histogram of an image
 
 #### 1. Aim
 In this task, we analyse the grayscale intensity distribution of an image using its histogram and improve the image contrast through intensity stretching. The enhanced result is then compared with the original image.
@@ -201,8 +202,38 @@ Although the enhancement improves image quality, the histogram is still not perf
 
 Therefore, histogram-guided contrast stretching provides a simple yet effective method for contrast enhancement in grayscale imaging.
 
+#### Histogram, PDF and CDF
 
+To further analyse the intensity distribution of the enhanced image **g**, the  **probability distribution function (PDF)** and **cumulative distribution function (CDF)**  were computed.
 
+The PDF is a **normalised histogram**, while the CDF is the **cumulative sum of the PDF**, representing the cumulative probability of intensity values.
 
+```matlab
+g_pdf = imhist(g) ./ numel(g);  % compute PDF
+g_cdf = cumsum(g_pdf);          % compute CDF
+close all                       % close all figure windows
+imshow(g);
+subplot(1,2,1)                  % plot 1 in a 1x2 subplot
+plot(g_pdf)
+subplot(1,2,2)                  % plot 2 in a 1x2 subplot
+plot(g_cdf)
+```
+<img src="12.png" width="300"> 
 
+#### Results
+* Both PDF and CDF are vectors of size 256 × 1 (double), corresponding to the 256 grayscale intensity levels.
+* The PDF shows that pixel intensities are mainly distributed in the mid-to-high intensity range, consistent with the contrast stretching applied earlier.
+* The CDF increases smoothly from 0 to 1, confirming correct normalisation and cumulative probability behaviour.
+
+#### Interpretation
+
+The PDF and CDF provide complementary insights into image intensity distribution:
+* PDF reveals how frequently each gray level occurs.
+* CDF describes the cumulative proportion of pixels up to a given intensity.
+
+After contrast stretching:
+* The PDF becomes more spread out, indicating improved utilisation of the grayscale range.
+* The CDF exhibits a steeper middle region, reflecting enhanced contrast in the dominant intensity interval.
+
+These observations confirm that the histogram-based contrast enhancement successfully improves the perceptual quality of the grayscale image.
 
