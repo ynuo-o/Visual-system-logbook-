@@ -278,5 +278,42 @@ The boundary result can be improved by reducing noise before boundary extraction
 * Alternatively, use opening + closing to both suppress small noise and fill small gaps in blobs.
 * Adjust the structuring element shape/size (e.g., a small disk) to obtain smoother, more consistent boundaries.
 
+### Task 4 - Function bwmorph - thinning and thickening
+A fingerprint image was converted into a clean binary image using intensity inversion and Otsu thresholding, producing white ridges on a black background. The bwmorph thinning operation was then applied repeatedly with iteration counts n=1 to 5, and also with n=∞ (repeat until no further change). All intermediate results were displayed as a montage to observe the progressive reduction of ridge thickness.
+```matlab
+clear all
+close all
+
+% 1. Read fingerprint image
+I = imread('assets/fingerprint.tif');
+
+% 2. Convert to binary (same method as previous task)
+I = imcomplement(I);
+level = graythresh(I);
+f = imbinarize(I, level);
+
+% 3. Thinning for n = 1..5 and inf
+g1 = bwmorph(f, 'thin', 1);
+g2 = bwmorph(f, 'thin', 2);
+g3 = bwmorph(f, 'thin', 3);
+g4 = bwmorph(f, 'thin', 4);
+g5 = bwmorph(f, 'thin', 5);
+ginf = bwmorph(f, 'thin', inf);
+
+% 4. Display comparison
+montage({f, g1, g2, g3, g4, g5, ginf}, 'Size', [2 4])
+title('f | thin1 | thin2 | thin3 | thin4 | thin5 | thin inf')
+montage({~f, ~g1, ~g2, ~g3, ~g4, ~g5, ~ginf}, 'Size', [2 4])
+title('Inverted display: black ridges on white background')
+```
+<img src="9.png" width="300"> <img src="10.png" width="300"> 
+
+**What happens if keep thinning (n = inf)**
+As n increases, the ridge structures become progressively thinner. With n=∞, thinning converges to a minimally connected representation (skeleton-like) where ridges are close to one-pixel wide, while preserving overall connectivity as much as possible.
+
+**Relationship between thinning and thickening (after inversion)**
+When the image is inverted, the definition of “foreground” changes. Since thinning and thickening are applied to foreground pixels (value 1), thinning on the complemented image corresponds to a thickening-like effect relative to the original ridges. This demonstrates that thinning and thickening are complementary operations under image inversion (foreground/background swap).
+
+
 
 
