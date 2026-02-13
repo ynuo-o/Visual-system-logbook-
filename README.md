@@ -1,5 +1,5 @@
 # Visual System logbook
-This repository contains the Design for Visual Systems laboratory logbook created by **Yinuo Pang**.
+This repository contains the Design for Visual Systems laboratory logbook created by **Yinuo Pang(06060377)**.
 Each lab folder is organised to document both the learning process and technical outputs, and includes:
 
 1. README file – containing structured notes, explanations, and observations for the lab tasks.
