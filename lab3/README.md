@@ -291,3 +291,67 @@ Compared with simple contrast stretching, histogram equalization provides a stro
 Overall, histogram equalization significantly improves the visual quality and gray-level distribution of the image.
 
 
+### Task 4 – Noise reduction with lowpass filter
+In this task, we investigate the effect of two spatial smoothing filters — the moving average (box) filter and the Gaussian filter — on a noisy X-ray image of a printed circuit board (PCB). The objective is to reduce visible noise while preserving meaningful structural details.
+
+The PCB X-ray image was imported and displayed.
+
+```matlab
+clear all
+close all
+f = imread('assets/noisyPCB.jpg');
+imshow(f)
+```
+<img src="16.png" width="300"> 
+
+#### Create smoothing filter kernels
+Two different kernels were generated using fspecial:
+* 9×9 averaging (box) filter
+* 7×7 Gaussian filter with σ = 1.0
+
+Both kernels are normalised so that their coefficients sum to 1.
+```matlab
+w_box = fspecial('average', [9 9])
+w_gauss = fspecial('Gaussian', [7 7], 1.0)
+```
+
+#### Apply filters to the image
+Each kernel was applied using spatial convolution (`imfilter`), and the results were displayed side-by-side with the original image.
+```matlab
+g_box = imfilter(f, w_box, 0);
+g_gauss = imfilter(f, w_gauss, 0);
+figure
+montage({f, g_box, g_gauss})
+```
+<img src="17.png" width="300"> 
+
+#### Results and Observations
+Noise reduction
+* Both filters reduce high-frequency noise present in the original X-ray image.
+* The box filter produces noticeable smoothing but also causes:
+ * loss of sharp edges
+ * blocky or blurred appearance
+
+* The Gaussian filter provides:
+ * smoother and more natural noise reduction
+ * better preservation of edges and fine PCB structures
+
+This occurs because Gaussian weighting gives higher importance to central pixels and less to distant pixels, unlike uniform averaging.
+
+#### Visual comparison conclusion
+* Original image: strong granular noise.
+* Box filter: noise reduced but edges blurred.
+* Gaussian filter: best trade-off between smoothing and detail preservation.
+
+Therefore, the Gaussian filter is more suitable for denoising while maintaining structural information.
+
+
+
+
+
+
+
+
+
+
+
