@@ -413,6 +413,7 @@ Conclusion: Grayscale morphological dilation and erosion modify local intensity 
 
 ### Challenge 1 -  Find how many fills this patient has and their sizes in number of pixels.
 **Method**
+
 The noisy dental X-ray image was first enhanced to reduce noise and improve contrast between fillings and surrounding tooth structures.
 After enhancement, a thresholding step converted the grayscale image into a binary mask highlighting potential fillings.
 Connected-component analysis was then applied to the binary image to:
@@ -422,6 +423,7 @@ Connected-component analysis was then applied to the binary image to:
 * visualise the detected regions using label overlay
 
 **Result**
+
 The algorithm detected 6 dental fillings in the image. The measured filling areas (in pixels), sorted from largest to smallest, are:
 * 231835
 * 190171
@@ -433,6 +435,21 @@ The algorithm detected 6 dental fillings in the image. The measured filling area
 The overlay visualisation confirms that the detected regions correspond to bright filling materials in the X-ray, demonstrating that grayscale morphological processing combined with connected-component analysis can effectively identify and quantify dental restorations.
 
 <img src="16.png" width="300"> 
+
+### Challenge 2 -  Produce an output image that contains the main lines without all the underlining non-characteristic lines.
+After binarisation and thinning, most thin noisy lines are removed.
+However, the structuring element is too strong, so many important palm lines are also removed, leaving only a few scattered pixels.
+This means the main palm lines are not fully preserved.
+
+
+<img src="17.png" width="300"> 
+
+**Improvement**
+The result could be improved by using a smaller structuring element or adjusting the threshold, so that noise is removed while the main palm lines remain.
+
+
+
+
 
 
 
