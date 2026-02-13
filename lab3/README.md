@@ -29,11 +29,24 @@ To determine if the image uses the full dynamic range, we calculated the minimum
 ```
 **Results**: While the maximum value reaches the limit of 255, the minimum value starts at 21. The image does not utilize the full range $[0, 255]$, particularly in the darker (lower) intensities, which may result in a lack of shadow detail.
 
-To visualise only top half of the image, spatial slicing was applied:
+
+#### 3. Spatial slicing
+To further examine MATLAB’s matrix-based spatial indexing, spatial slicing was applied.  
+The command below extracts the top half of the image by selecting the first 241 rows and all columns:
+
 ```matlab
 imshow(f(1:241,:))
 ```
 <img src="2.png" width="300"> 
+
+Similarly, the right half of the image was extracted by selecting all rows and only the columns in the second half of the matrix:
+```matlab
+[rows, cols] = size(f);
+rightHalf = f(:, floor(cols/2)+1:end);
+imshow(rightHalf)
+```
+<img src="3.png" width="300"> 
+
 
 
 
