@@ -1,5 +1,7 @@
-# Visual-system-logbook-
-### Loading and Understanding the Test Image
+# Visual System logbook
+This repository contains the Design for Visual Systems laboratory logbook created by **Yinuo Pang**.
+Each lab folder is organised to document both the learning process and technical outputs, and includes:
 
-The provided “clown” dataset is loaded in MATLAB as an indexed colour image represented by a matrix X and an associated colormap map.  
-Although the indexed display may appear coloured depending on the MATLAB version, converting the image using ind2gray produces a true grayscale intensity image.
+1. README file – containing structured notes, explanations, and observations for the lab tasks.
+2. Generated images – all figures and visual results produced during the experiments.
+3. MATLAB files – implementation code in both .mlx live script and .m function/script formats.
