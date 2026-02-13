@@ -329,12 +329,12 @@ montage({f, g_box, g_gauss})
 Noise reduction
 * Both filters reduce high-frequency noise present in the original X-ray image.
 * The box filter produces noticeable smoothing but also causes:
- * loss of sharp edges
- * blocky or blurred appearance
+  * loss of sharp edges
+  * blocky or blurred appearance
 
 * The Gaussian filter provides:
- * smoother and more natural noise reduction
- * better preservation of edges and fine PCB structures
+  * smoother and more natural noise reduction
+  * better preservation of edges and fine PCB structures
 
 This occurs because Gaussian weighting gives higher importance to central pixels and less to distant pixels, unlike uniform averaging.
 
