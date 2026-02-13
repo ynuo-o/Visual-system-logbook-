@@ -243,7 +243,40 @@ After thresholding, the result can become sensitive to parameter selection and m
 
 Therefore, morphological filtering is generally more suitable for binary structural cleanup and connectivity restoration, whereas Gaussian filtering is better suited for grayscale noise smoothing but may degrade fine edge structures in binary fingerprint images.
 
+### Task 3 - Boundary detection
+The aim of this task is to extract the boundaries of blobs from a noisy grayscale image using morphological boundary detection.
 
+The grayscale image was first inverted and binarised using Otsu’s thresholding. Morphological boundary detection was then performed by subtracting the eroded binary image from the original binary image using a 3×3 structuring element. The original image, binary image, eroded image, and detected boundary image were displayed for comparison.
+
+```matlab
+clear all
+close all
+I = imread('assets/blobs.tif');
+I = imcomplement(I);
+level = graythresh(I);
+BW = imbinarize(I, level);
+
+% Morphological boundary operator:
+
+SE = ones(3,3);                   % 3x3 SE of 1s (as required)
+BW_eroded = imerode(BW, SE);      
+boundary = BW & ~BW_eroded;       
+
+
+montage({I, BW, BW_eroded, boundary}, 'Size', [2 2])
+title('I (inverted) | BW | eroded BW | boundary (BW - eroded BW)')
+```
+<img src="8.png" width="300"> 
+
+**Comment on the results**
+
+The binarisation step produces a reasonable separation between blobs (foreground) and background; however, the noisy background introduces small spurious white regions in the binary image. After erosion, each blob shrinks slightly, and subtracting the eroded image from the original binary image leaves a thin outline corresponding to the blob boundaries. Most large blobs have clear boundaries, but some boundaries appear fragmented or contain extra edge pixels due to noise and imperfect thresholding.
+
+**How to improve the result**
+The boundary result can be improved by reducing noise before boundary extraction. For example:
+* Apply morphological opening to remove small isolated foreground noise in BW before erosion/subtraction.
+* Alternatively, use opening + closing to both suppress small noise and fill small gaps in blobs.
+* Adjust the structuring element shape/size (e.g., a small disk) to obtain smoother, more consistent boundaries.
 
 
 
