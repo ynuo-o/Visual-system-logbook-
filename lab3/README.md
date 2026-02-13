@@ -148,3 +148,60 @@ imshowpair(f, g, "montage")
 * Compresses very dark and very bright regions
 * Produces a perceptually clearer medical image
 * Therefore, this transformation is particularly suitable for medical X-ray visualisation, where subtle structural differences must be emphasised without amplifying noise excessively.
+
+### Task 3 – Contrast Enhancement using Histogram
+
+#### 1. Aim
+In this task, we analyse the grayscale intensity distribution of an image using its histogram and improve the image contrast through intensity stretching. The enhanced result is then compared with the original image.
+
+
+#### 2. Plotting the histogram of the original image
+
+MATLAB provides the function `imhist` to compute and visualise the histogram of an image.
+
+```matlab
+clear all       % clear all variable in workspace
+close all       % close all figure windows
+f=imread('assets/pollen.tif');
+imshow(f)
+figure          % open a new figure window
+imhist(f);      % calculate and plot the histogram
+```
+
+
+<img src="7.png" width="300"> <img src="8.png" width="300"> 
+From the histogram, the pixel intensities are mainly concentrated between 70 and 140 within the full grayscale range [0, 255], indicating that the image has low contrast and does not utilise the full dynamic range.
+
+#### 3. Contrast stretching using imadjust
+To improve contrast, the intensity range [0.3, 0.55] of the full scale is stretched to the full grayscale range.
+
+```matlab
+close all
+g=imadjust(f,[0.3 0.55]);
+montage({f, g})     % display list of images side-by-side
+figure
+imhist(g);
+```
+<img src="9.png" width="300"> <img src="10.png" width="300"> 
+
+#### 4. Results
+
+* The processed image g preserves the same spatial resolution as the original image f (500 × 500, uint8).
+* The histogram of the enhanced image is more spread across the grayscale range, indicating improved utilisation of intensity levels.
+* Structural details in the pollen grains become clearer and more distinguishable compared with the original low-contrast image.
+
+#### 5. Interpretation
+Histogram-based contrast stretching effectively redistributes pixel intensities:
+* Expands the mid-intensity range where most information is located
+* Increases global contrast and visual clarity
+* Improves perceptual visibility of fine structures
+
+Although the enhancement improves image quality, the histogram is still not perfectly uniform, meaning further techniques (e.g., histogram equalisation) could provide additional improvement.
+
+Therefore, histogram-guided contrast stretching provides a simple yet effective method for contrast enhancement in grayscale imaging.
+
+
+
+
+
+
