@@ -404,3 +404,55 @@ Results
 * Unsharp: clear craters with natural overall look.
 All three methods improve sharpness, but unsharp masking gives the best visual balance between detail enhancement and noise.
 
+### Task 7  - Test yourself Challenges
+1) lake&tree.png
+Contrast was improved using imadjust and histogram equalization (histeq), which stretch the intensity range and redistribute pixel values to enhance visual detail.
+
+```matlab
+clear; close all;
+I = imread('assets/lake&tree.png');
+if size(I,3)==3, I = rgb2gray(I); end
+A = imadjust(I);    
+B = histeq(I);     
+figure;
+montage({I, A, B}, 'Size', [1 3]);
+title('Original | imadjust | histeq');
+```
+<img src="20.png" width="300"> 
+
+
+2) circles.tif
+Sobel edge detection was applied (optionally after Gaussian smoothing) to highlight circle boundaries by detecting strong intensity gradients.
+```matlab
+clear; close all;
+I = imread('assets/circles.tif');
+if size(I,3)==3, I = rgb2gray(I); end
+E = edge(I, 'sobel');
+figure;
+montage({I, E}, 'Size', [1 2]);
+title('Original | Sobel edges');
+```
+
+<img src="21.png" width="300"> 
+
+
+3) office.jpg
+Lighting and colour visibility were enhanced using imadjust with intensity stretching to correct under-exposure and improve overall brightness and contrast.
+```matlab
+clear; close all;
+I = imread('assets/office.jpg');
+J = imadjust(I, stretchlim(I,[0.01 0.99]), []); 
+figure;
+montage({I, J}, 'Size', [1 2]);
+title('Original | imadjust(stretchlim)');
+```
+
+<img src="22.png" width="300"> 
+
+
+
+
+
+
+
+
