@@ -100,17 +100,20 @@ montage({A, E2, E10, E20}, "size", [2 2])
 Radius = 2 (E2)
 * Thin connections become slightly narrower.
 * Large square regions remain mostly unchanged.
-      → Indicates weak erosion.
+
+  → Indicates weak erosion.
 
 Radius = 10 (E10)
 * Many thin wires disappear.
 * Only thicker structures remain.
-      → Demonstrates moderate erosion and removal of small features.
+
+  → Demonstrates moderate erosion and removal of small features.
 
 Radius = 20 (E20)
 * Nearly all thin structures are removed.
 * Only the largest square regions persist.
-      → Shows strong erosion and clear size-based filtering effect.
+
+   → Shows strong erosion and clear size-based filtering effect.
 
 Conclusion: Morphological erosion removes foreground pixels that cannot fully contain the structuring element. As the structuring element size increases:
 * Small and thin structures disappear first
