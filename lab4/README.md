@@ -342,7 +342,37 @@ By counting the number of pixels in each component, the largest connected compon
 After removal, the remaining smaller text regions are still visible, confirming that the operation correctly targeted only the largest connected structure without affecting other components.
 
 
+### Task 6 – Morphological Reconstruction
+The aim of this task is to compare standard morphological opening with morphological reconstruction. 
 
+**Method**
+* First, the binary text image `f` is read.
+* A vertical structuring element of size 17×1 is created to match the long vertical strokes in the characters.
+* The image is eroded using this structuring element to obtain a marker image `g`, which keeps only pixels belonging to tall vertical features.
+* A standard opening (`fo`) is also applied for comparison.
+* Then morphological reconstruction (`fr`) is performed using the marker g and the original mask `f`.
+* Finally, all results {`f, g, fo, fr`} are displayed using a montage.
+
+```matlab
+clear all
+close all
+f = imread('assets/text_bw.tif');
+se = ones(17,1);
+g = imerode(f, se);
+fo = imopen(f, se);     % perform open to compare
+fr = imreconstruct(g, f);
+montage({f, g, fo, fr}, "size", [2 2])
+```
+<img src="13.png" width="300"> 
+
+**Comment on the result**
+
+* Original image (f): Contains full text characters together with noise and small structures.
+* Marker image after erosion (g): Most structures are removed, leaving only sparse pixels belonging to long vertical strokes.
+* Standard opening (fo): Removes many undesired components, but also distorts or breaks the shapes of the remaining characters because dilation cannot perfectly restore the original geometry.
+* Morphological reconstruction (fr): Successfully preserves the true shapes of the long vertical characters while removing unrelated structures. Compared with opening, reconstruction provides more accurate shape recovery and cleaner segmentation of the desired features.
+
+Conclusion: Morphological reconstruction is more effective than standard opening when the goal is to retain specific structures while removing others. Unlike opening, reconstruction restores objects based on the original mask, allowing it to preserve shape integrity and produce a more meaningful result.
 
 
 
