@@ -47,7 +47,7 @@ imshow(rightHalf)
 ```
 <img src="3.png" width="300"> 
 
-
+These operations demonstrate MATLAB’s row–column indexing mechanism, where slicing rows reveals vertical spatial regions and slicing columns reveals horizontal spatial regions of the image.
 
 
 
