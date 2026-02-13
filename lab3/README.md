@@ -170,6 +170,7 @@ imhist(f);      % calculate and plot the histogram
 
 
 <img src="7.png" width="300"> <img src="8.png" width="300"> 
+
 From the histogram, the pixel intensities are mainly concentrated between 70 and 140 within the full grayscale range [0, 255], indicating that the image has low contrast and does not utilise the full dynamic range.
 
 #### 3. Contrast stretching using imadjust
