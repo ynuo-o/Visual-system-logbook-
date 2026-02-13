@@ -121,12 +121,101 @@ Conclusion: Morphological erosion removes foreground pixels that cannot fully co
 * The operation behaves as a size filter on the binary image
 
 
+### Task 2 - Morphological Filtering with Open and Close
+#### Opening = Erosion + Dilation
+we explore the effect of using Open and Close on a binary noisy fingerprint image in this task. 
+The noisy fingerprint image was processed using erosion, dilation, and opening with a 3×3 structuring element to produce fe, fed, and fo, which were then displayed together with the original image for comparison. The following code achieve: 
+1. Read the image file 'finger-noisy.tif' into f.
+2. Generate a 3x3 structuring element SE.
+3. Erode f to produce fe.
+4. Dilate fe to produce fed.
+5. Open f to produce fo.
+6. Show f, fe, fed and fo as a 4 image montage.
+
+```matlab
+clear all
+close all
+% 1. Read the noisy finger image
+f = imread('assets/fingerprint-noisy.tif');
+% 2. Generate a 3×3 structuring element
+SE = strel('square', 3);
+% 3. Erode f → fe
+fe = imerode(f, SE);
+% 4. Dilate fe → fed
+fed = imdilate(fe, SE);
+% 5. Open f directly → fo
+fo = imopen(f, SE);
+% 6. Display results as a 4-image montage
+montage({f, fe, fed, fo}, 'Size', [2 2])
+title('f | fe (erosion) | fed (erosion+dilation) | fo (opening)')
+```
+<img src="4.png" width="300"> 
+
+**Comment on the results**
+* f (original image): The fingerprint ridges appear as white foreground structures, but the background contains noticeable salt-like noise, and small discontinuities are present along the ridges.
+
+* fe (erosion): Foreground regions become thinner and many isolated white noise pixels are removed, but the fingerprint ridges are also weakened and may break into thinner segments.
+
+* fed (erosion followed by dilation): Most of the removed white noise does not reappear, while ridge thickness is partially restored.
+However, the result appears smoother than the original image, with some loss of fine detail.
+
+* fo (opening): The result is visually very similar to fed, confirming that opening equals erosion followed by dilation.
+Overall, small white noise is effectively removed, but some fine ridge details are sacrificed.
+
+#### Explore other size/shape of SE
+```matlab
+f = imread('assets/fingerprint-noisy.tif');
+
+% Different structuring elements
+SE_sq3  = strel('square', 3);
+SE_sq5  = strel('square', 5);
+SE_disk2 = strel('disk', 2);
+SE_disk4 = strel('disk', 4);
+SE_line7 = strel('line', 7, 0);     % horizontal line
+SE_line7v = strel('line', 7, 90);   % vertical line
+
+fo_sq3   = imopen(f, SE_sq3);
+fo_sq5   = imopen(f, SE_sq5);
+fo_disk2 = imopen(f, SE_disk2);
+fo_disk4 = imopen(f, SE_disk4);
+fo_lineH = imopen(f, SE_line7);
+fo_lineV = imopen(f, SE_line7v);
+
+montage({f, fo_sq3, fo_sq5, fo_disk2, fo_disk4, fo_lineH, fo_lineV}, 'Size', [2 4])
+title('Original | open sq3 | open sq5 | open disk2 | open disk4 | open line0 | open line90')
+```
+<img src="5.png" width="300"> 
+
+**Comment on the results**
+Changing the size and shape of the structuring element significantly affects the filtering behaviour.
+* Larger structuring elements remove more noise but also cause stronger loss of fine ridge details and may break thin structures.
+* Smaller structuring elements better preserve ridge continuity but provide weaker noise suppression.
+* Disk-shaped elements tend to produce more isotropic and smooth results.
+* Line-shaped elements introduce directional sensitivity and may preferentially affect structures aligned with the line orientation.
+This demonstrates that morphological filtering is strongly dependent on the geometric properties of the structuring element.
 
 
+#### Improve the image fo with a close operation
+```matlab
+SE = strel('square', 3);  
 
+fo = imopen(f, SE);        
+fo_close = imclose(fo, SE); % improve fo using closing
 
+montage({f, fo, fo_close}, 'Size', [1 3])
+title('Original | Opening (fo) | Opening + Closing')
+```
+<img src="6.png" width="300"> 
 
+**Comment on the results**
+Applying a closing operation after opening helps reconnect small gaps and fill minor dark discontinuities along the fingerprint ridges.
+Compared with opening alone, the combined opening-then-closing result shows:
+* improved ridge continuity,
+* reduced small breaks or holes,
+* slightly thicker ridge structures.
+However, if the structuring element is too large, neighbouring ridges may merge and fine structural details can be lost.
 
+#### Compare Open+Close vs Gaussian spatial filter
 
 
 
