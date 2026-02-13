@@ -388,3 +388,36 @@ montage({f, ff})
 
 The `imfill` operation fills holes inside foreground objects that are completely surrounded by background pixels. After applying `imfill`, the characters become more solid and continuous, and small internal gaps or cavities are removed. This improves the structural integrity of the text and makes the shapes easier to analyse in subsequent morphological processing.
 
+### Task 7 - Morphological Operations on Grayscale images
+we explored the effect of erosion and dilation on grayscale images. Specifically, grayscale morphological dilation and erosion were applied to a head CT image using a 3×3 square structuring element. The dilated image (`gd`), eroded image (`ge`), and their difference (`gg = gd − ge`) were displayed together with the original image for comparison.
+
+```matlab
+clear all; close all;
+f = imread('assets/headCT.tif');
+se = strel('square',3);
+gd = imdilate(f, se);
+ge = imerode(f, se);
+gg = gd - ge;
+montage({f, gd, ge, gg}, 'size', [2 2])
+```
+<img src="15.png" width="300"> 
+
+**Comments on the results**
+* Dilation increases the intensity of bright regions and slightly expands high-intensity structures such as the skull boundary, causing the image to appear smoother and thicker around edges.
+* In contrast, erosion reduces bright regions and enhances darker areas, which makes the overall image slightly darker and suppresses small bright details.
+* The difference image (`gd − ge`) highlights regions where intensity changes rapidly, effectively acting as an edge-enhancement operator similar to a morphological gradient. As a result, anatomical boundaries such as the skull contour and internal tissue transitions become more clearly visible in the gradient image.
+
+Conclusion: Grayscale morphological dilation and erosion modify local intensity extrema rather than binary shapes. Their combination through subtraction produces a morphological gradient that is useful for edge detection and structural analysis in medical images.
+
+
+
+
+
+
+
+
+
+
+
+
+
