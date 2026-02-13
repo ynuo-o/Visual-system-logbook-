@@ -11,11 +11,75 @@ The binary image text-broken.tif was loaded into MATLAB. Morphological dilation 
 * B2 (all ones SE) – expands pixels uniformly in all directions
 * Bx (diagonal cross SE) – expands pixels mainly along diagonal directions
 
-In addition, dilation using B1 was applied twice to observe the cumulative effect of repeated dilation.
+In addition, dilation using B1 was applied twice to observe the cumulative effect of repeated dilation. The code used is shown below: 
 ```matlab
-clear all
-imfinfo('assets/breastXray.tif')
-f = imread('assets/breastXray.tif');
-imshow(f)
+A = imread('assets/text-broken.tif');
+
+% SE 1: cross (+)
+B1 = [0 1 0;
+      1 1 1;
+      0 1 0]; % create structuring element
+A1 = imdilate(A, B1);
+
+% SE 2: all ones (3x3)
+B2 = ones(3,3); 
+A2 = imdilate(A, B2);
+
+% SE 3: diagonal cross (X)
+Bx = [1 0 1;
+      0 1 0;
+      1 0 1];
+A3 = imdilate(A, Bx);
+
+% Dilate twice using B1
+A1_twice = imdilate(A1, B1);
+
+% Show results
+montage({A, A1, A2, A3, A1_twice})
+title('Original | B1 (+) | B2 (ones) | Bx (X) | B1 twice')
 ```
+
 <img src="1.png" width="300"> 
+
+
+#### Results and Observations
+B1 – Cross-shaped dilation
+* Text strokes become thicker mainly in horizontal and vertical directions.
+* Some small gaps in broken characters are partially connected.
+* Character shapes remain relatively recognisable.
+
+B2 – Full 3×3 dilation
+* Produces the strongest expansion in all directions.
+* Most gaps are closed and strokes become significantly thicker.
+* However, nearby characters begin to merge and fine details are lost.
+
+Bx – Diagonal dilation
+* Thickening occurs primarily along diagonal directions.
+* Diagonal gaps are better connected than horizontal/vertical ones.
+* Overall repair effect is weaker than B2.
+
+Repeated dilation with B1
+* Applying dilation twice further enlarges foreground regions.
+* More gaps close and characters become heavily thickened.
+* Excessive dilation reduces readability and merges neighbouring structures.
+
+Conclusion: Morphological dilation enlarges foreground structures according to the shape of the structuring element. Different SE geometries control direction, strength, and connectivity of expansion:
+* Cross SE preserves structure best
+* Full SE maximises repair but loses detail
+* Diagonal SE emphasises directional growth
+* Repeated dilation increases connectivity but may degrade visual clarity.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
