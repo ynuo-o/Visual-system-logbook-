@@ -103,6 +103,48 @@ This experiment demonstrates the difference between:
 * Nonlinear gamma correction (g3) – perceptually balanced enhancement that preserves more structural detail.
 Gamma correction is therefore more suitable for medical image visualisation, where maintaining subtle tissue information is essential.
 
+### Task 2 – Contrast-stretching transformation
 
+#### 1. Aim
+Instead of using the built-in `imadjust` function, we apply the contrast-stretching transformation to enhance the contrast of an X-ray image and compare the result with the original.
 
+#### 2. Transformation function
+The contrast-stretching function is defined as:
 
+$$
+s = T(r) = \frac{1}{1 + \left(\frac{k}{r}\right)^E}
+$$
+
+where $r$ is the input intensity, $s$ is the output intensity, $k$ is often set to the mean intensity of the image, and $E$ controls the steepness of the mapping. A small constant `eps` is added to avoid division by zero.
+
+#### 3. Implementation in MATLAB
+* Key processing steps:
+ * Convert the image from uint8 to double to allow floating-point computation.
+ * Compute the mean intensity $k$.
+ * Apply the nonlinear contrast-stretching transformation element-wise.
+ * Normalize the result to [0,1], then rescale back to [0,255] and convert to uint8.
+ * Display original and processed images side-by-side.
+```matlab
+clear all       % clear all variables
+close all       % close all figure windows
+f = imread('assets/bonescan-front.tif');
+r = double(f);  % uint8 to double conversion
+k = mean2(r);   % find mean intensity of image
+E = 0.9;
+s = 1 ./ (1.0 + (k ./ (r + eps)) .^ E);
+g = uint8(255*s);
+imshowpair(f, g, "montage")
+```
+<img src="6.png" width="300"> 
+
+#### 4.Results
+* The processed image g preserves the same spatial resolution as the original image f (1641 × 513, uint8).
+* The nonlinear transformation increases brightness and contrast in regions around the mean intensity level.
+* Bone structures and anatomical details become more visible compared with the original low-contrast scan.
+
+#### 5. Interpretation
+* Unlike linear contrast stretching, this sigmoid-shaped nonlinear transformation:
+* Enhances contrast near the average intensity region
+* Compresses very dark and very bright regions
+* Produces a perceptually clearer medical image
+* Therefore, this transformation is particularly suitable for medical X-ray visualisation, where subtle structural differences must be emphasised without amplifying noise excessively.
