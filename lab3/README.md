@@ -364,8 +364,16 @@ Overall trade-off
    * Small kernel / small σ → clear edges, preserved detail, weaker denoising
 * In practice, moderate parameter values provide the best visual compromise for PCB inspection, where both noise suppression and edge visibility are important.
 
+### Task 5 - Median Filtering
 
+We applied a 7×7 median filter to the noisy PCB X-ray image:
 
+```matlab
+g_median = medfilt2(f, [7 7], 'zero');
+figure; montage({f, g_median})
+```
+<img src="18.png" width="300"> 
 
-
+The median filter reduces noise while preserving edges better than box or Gaussian smoothing.
+Component boundaries remain clearer, although some fine noise is still visible.
 
