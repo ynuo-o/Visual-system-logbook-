@@ -377,3 +377,30 @@ figure; montage({f, g_median})
 The median filter reduces noise while preserving edges better than box or Gaussian smoothing.
 Component boundaries remain clearer, although some fine noise is still visible.
 
+### Task 6 - Sharpening the image with Laplacian, Sobel and Unsharp filters
+The goal of this task is to sharpen the moon image so that craters and edges become clearer. Three filters were tested: Laplacian, Sobel, and Unsharp masking.
+```matlab
+clear; close all;
+f = im2double(imread('assets/moon.tif'));
+% Laplacian
+g1 = f - imfilter(f, fspecial('laplacian',0.2), 'replicate');
+% Sobel
+sx = imfilter(f, fspecial('sobel'), 'replicate');
+sy = imfilter(f, fspecial('sobel')', 'replicate');
+g2 = f + 0.8*sqrt(sx.^2 + sy.^2);
+% Unsharp
+b = imfilter(f, fspecial('gaussian',[7 7],1.2), 'replicate');
+g3 = f + 1.5*(f - b);
+figure;
+montage({f, g1, g2, g3}, 'Size',[1 4]);
+title('Original | Laplacian | Sobel | Unsharp');
+```
+<img src="19.png" width="300"> 
+
+Results
+* Original: smooth but slightly blurry.
+* Laplacian: sharper edges but some noise increase.
+* Sobel: strongest edge enhancement, slightly harsh appearance.
+* Unsharp: clear craters with natural overall look.
+All three methods improve sharpness, but unsharp masking gives the best visual balance between detail enhancement and noise.
+
