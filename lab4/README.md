@@ -122,7 +122,7 @@ Conclusion: Morphological erosion removes foreground pixels that cannot fully co
 
 
 ### Task 2 - Morphological Filtering with Open and Close
-#### Opening = Erosion + Dilation
+#### 1. Opening = Erosion + Dilation
 we explore the effect of using Open and Close on a binary noisy fingerprint image in this task. 
 The noisy fingerprint image was processed using erosion, dilation, and opening with a 3×3 structuring element to produce fe, fed, and fo, which were then displayed together with the original image for comparison. The following code achieve: 
 1. Read the image file 'finger-noisy.tif' into f.
@@ -162,7 +162,7 @@ However, the result appears smoother than the original image, with some loss of 
 * fo (opening): The result is visually very similar to fed, confirming that opening equals erosion followed by dilation.
 Overall, small white noise is effectively removed, but some fine ridge details are sacrificed.
 
-#### Explore other size/shape of SE
+#### 2. Explore other size/shape of SE
 ```matlab
 f = imread('assets/fingerprint-noisy.tif');
 
@@ -187,6 +187,7 @@ title('Original | open sq3 | open sq5 | open disk2 | open disk4 | open line0 | o
 <img src="5.png" width="300"> 
 
 **Comment on the results**
+
 Changing the size and shape of the structuring element significantly affects the filtering behaviour.
 * Larger structuring elements remove more noise but also cause stronger loss of fine ridge details and may break thin structures.
 * Smaller structuring elements better preserve ridge continuity but provide weaker noise suppression.
@@ -195,7 +196,7 @@ Changing the size and shape of the structuring element significantly affects the
 This demonstrates that morphological filtering is strongly dependent on the geometric properties of the structuring element.
 
 
-#### Improve the image fo with a close operation
+#### 3. Improve the image fo with a close operation
 ```matlab
 SE = strel('square', 3);  
 
@@ -208,6 +209,7 @@ title('Original | Opening (fo) | Opening + Closing')
 <img src="6.png" width="300"> 
 
 **Comment on the results**
+
 Applying a closing operation after opening helps reconnect small gaps and fill minor dark discontinuities along the fingerprint ridges.
 Compared with opening alone, the combined opening-then-closing result shows:
 * improved ridge continuity,
@@ -215,11 +217,31 @@ Compared with opening alone, the combined opening-then-closing result shows:
 * slightly thicker ridge structures.
 However, if the structuring element is too large, neighbouring ridges may merge and fine structural details can be lost.
 
-#### Compare Open+Close vs Gaussian spatial filter
+#### 4. Compare Open+Close vs Gaussian spatial filter
+```matlab
+SE = strel('square', 3);
 
+% Morphological filtering: Open + Close
+f_oc = imclose(imopen(f, SE), SE);
 
+% Gaussian spatial filter (needs grayscale -> threshold)
+fg = im2double(f);
+fg_blur = imgaussfilt(fg, 1.0);         % sigma=1.0
+fg_bin = fg_blur > 0.5;                  % threshold 
 
+montage({f, f_oc, fg_blur, fg_bin}, 'Size', [2 2])
+title('Original | Open+Close | Gaussian blurred | Gaussian + threshold')
+```
+<img src="7.png" width="300"> 
 
+**Comment on the results**
+
+Morphological filtering and Gaussian spatial filtering operate on fundamentally different principles.
+* Open + Close (morphological filtering) performs shape- and size-based processing that preserves sharp binary boundaries and effectively removes small isolated noise while maintaining ridge structure.
+* Gaussian filtering performs intensity averaging, which reduces noise but introduces boundary blurring and contrast loss.
+After thresholding, the result can become sensitive to parameter selection and may produce broken or merged ridges.
+
+Therefore, morphological filtering is generally more suitable for binary structural cleanup and connectivity restoration, whereas Gaussian filtering is better suited for grayscale noise smoothing but may degrade fine edge structures in binary fingerprint images.
 
 
 
