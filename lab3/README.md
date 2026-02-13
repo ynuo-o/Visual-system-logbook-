@@ -49,6 +49,33 @@ imshow(rightHalf)
 
 These operations demonstrate MATLAB’s row–column indexing mechanism, where slicing rows reveals horizontal spatial regions, while slicing columns reveals vertical spatial regions of the image.
 
+#### 4. Negative image
+we compute the negative image and display both the original and the negative image side-by-side
+```matlab
+g1 = imadjust(f, [0 1], [1 0])
+figure              % open a new figure window
+montage({f, g1})
+```
+<img src="4.png" width="300"> 
+
+**Explanation**: The MATLAB function imadjust was used to invert the grayscale intensity values of the input image f:
+* Input range [0 1] keeps the full original intensity range.
+* Output range [1 0] reverses the mapping, meaning:
+  * Dark pixels become bright
+  * Bright pixels become dark
+This produces the negative image.
+
+**Results**
+* The output image g1 has the same size as the original image f (571×482, uint8).
+* Pixel intensities are inverted across the full grayscale range.
+* Visual comparison confirms correct negative transformation.
+
+
+
+
+
+
+
 
 
 
