@@ -309,11 +309,11 @@ title('Inverted display: black ridges on white background')
 <img src="9.png" width="300"> <img src="10.png" width="300"> 
 
 **What happens if keep thinning (n = inf)**
+
 As n increases, the ridge structures become progressively thinner. With n=∞, thinning converges to a minimally connected representation (skeleton-like) where ridges are close to one-pixel wide, while preserving overall connectivity as much as possible.
 
 **Relationship between thinning and thickening (after inversion)**
-When the image is inverted, the definition of “foreground” changes. Since thinning and thickening are applied to foreground pixels (value 1), thinning on the complemented image corresponds to a thickening-like effect relative to the original ridges. This demonstrates that thinning and thickening are complementary operations under image inversion (foreground/background swap).
-
+Thinning gradually reduces the ridge thickness of the fingerprint and eventually produces a skeleton-like structure when repeated until convergence. Thickening has the opposite tendency, expanding foreground regions. Although thinning and thickening are theoretically dual under image complementation, their visual results are not simple opposites in practical images.
 
 
 
