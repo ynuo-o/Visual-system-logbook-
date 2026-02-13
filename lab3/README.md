@@ -14,11 +14,21 @@ From the MATLAB workspace, we can see that the image matrix f has a dimension of
 
 
 
+
 To understand how image data is indexed and accessed: The command f(3,10) was used to read the intensity of a single pixel.
 ```matlab
 f(3,10)  
 ```
 
-The command f(3,10) was used to read the intensity of a single pixel.
+The returned value was 28. This means the pixel intensity is 28 and confirms that MATLAB stores grayscale values as integer intensities.
 
-The returned value was:
+To visualise only top half of the image, spatial slicing was applied:
+```matlab
+imshow(f(1:241,:))
+```
+<img src="2.png" width="300"> 
+
+
+
+
+
