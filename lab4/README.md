@@ -375,6 +375,16 @@ montage({f, g, fo, fr}, "size", [2 2])
 Conclusion: Morphological reconstruction is more effective than standard opening when the goal is to retain specific structures while removing others. Unlike opening, reconstruction restores objects based on the original mask, allowing it to preserve shape integrity and produce a more meaningful result.
 
 
+#### function `imfill`
+```matlab
+ff = imfill(f);
+figure
+montage({f, ff})
+```
+<img src="14.png" width="300"> 
 
 
+**Comment on imfill result**
+
+The `imfill` operation fills holes inside foreground objects that are completely surrounded by background pixels. After applying `imfill`, the characters become more solid and continuous, and small internal gaps or cavities are removed. This improves the structural integrity of the text and makes the shapes easier to analyse in subsequent morphological processing.
 
