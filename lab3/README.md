@@ -346,9 +346,23 @@ This occurs because Gaussian weighting gives higher importance to central pixels
 Therefore, the Gaussian filter is more suitable for denoising while maintaining structural information.
 
 
+#### Parameter Trade-off Discussion
 
+Kernel size
+* Increasing the kernel size in both box and Gaussian filters leads to stronger spatial averaging, which effectively suppresses high-frequency noise.
+* However, this also causes greater loss of fine structural details and edge sharpness, resulting in a smoother but less informative image.
+* Conversely, smaller kernels preserve local detail and edge definition, but their noise-reduction capability is limited, leaving visible grain in the filtered image.
 
+Gaussian sigma (σ)
+* For the Gaussian filter, increasing σ broadens the weighting distribution, producing stronger blurring and improved noise suppression.
+* Nevertheless, excessive σ values significantly reduce contrast around edges and may obscure small PCB features.
+* Smaller σ values maintain better structural clarity, but residual noise remains noticeable.
 
+Overall trade-off
+* There is a fundamental balance between noise reduction and detail preservation:
+   * Large kernel / large σ → smooth appearance, strong denoising, detail loss
+   * Small kernel / small σ → clear edges, preserved detail, weaker denoising
+* In practice, moderate parameter values provide the best visual compromise for PCB inspection, where both noise suppression and edge visibility are important.
 
 
 
