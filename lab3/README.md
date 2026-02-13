@@ -70,11 +70,38 @@ This produces the negative image.
 * Pixel intensities are inverted across the full grayscale range.
 * Visual comparison confirms correct negative transformation.
 
+#### 5.Gamma correction
+```matlab
+g2 = imadjust(f, [0.5 0.75], [0 1]);
+g3 = imadjust(f, [ ], [ ], 2);
+figure
+montage({g2,g3})
+```
+<img src="5.png" width="300"> 
 
+**Explanations**
+Two transformations were performed using the MATLAB function imadjust:
 
+(1) Contrast stretching within a selected range: `g2 = imadjust(f, [0.5 0.75], [0 1])`
+* The input gray-level range 0.5–0.75 is mapped to the full output range [0,1].
+* Intensities below 0.5 become black, and above 0.75 become white.
+* This enhances contrast in the mid-intensity region of the image.
 
+(2) Gamma correction: `g3 = imadjust(f, [], [], 2)`
+* Empty brackets [] indicate the default range [0,1].
+* Gamma value γ = 2 applies a nonlinear power-law transformation: $s = c r^{\gamma}$
+* Because γ > 1, darker intensities are compressed and brighter intensities are emphasised.
 
+**Results**
+* Both g2 and g3 preserve the original image size (571 × 482, uint8).
+* g2 strongly enhances structures within the selected mid-gray range but loses detail outside that interval.
+* g3 produces a smoother global contrast change, retaining more anatomical detail across the full grayscale range.
 
+**Interpretation**
+This experiment demonstrates the difference between:
+* Linear contrast stretching (g2) – selective enhancement but possible information loss.
+* Nonlinear gamma correction (g3) – perceptually balanced enhancement that preserves more structural detail.
+Gamma correction is therefore more suitable for medical image visualisation, where maintaining subtle tissue information is essential.
 
 
 
