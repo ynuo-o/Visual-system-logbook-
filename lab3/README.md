@@ -406,6 +406,7 @@ All three methods improve sharpness, but unsharp masking gives the best visual b
 
 ### Task 7  - Test yourself Challenges
 1) lake&tree.png
+
 Contrast was improved using imadjust and histogram equalization (histeq), which stretch the intensity range and redistribute pixel values to enhance visual detail.
 
 ```matlab
@@ -422,6 +423,7 @@ title('Original | imadjust | histeq');
 
 
 2) circles.tif
+
 Sobel edge detection was applied (optionally after Gaussian smoothing) to highlight circle boundaries by detecting strong intensity gradients.
 ```matlab
 clear; close all;
@@ -437,6 +439,7 @@ title('Original | Sobel edges');
 
 
 3) office.jpg
+
 Lighting and colour visibility were enhanced using imadjust with intensity stretching to correct under-exposure and improve overall brightness and contrast.
 ```matlab
 clear; close all;
