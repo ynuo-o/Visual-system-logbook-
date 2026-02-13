@@ -315,5 +315,35 @@ As n increases, the ridge structures become progressively thinner. With n=∞, t
 **Relationship between thinning and thickening (after inversion)**
 Thinning gradually reduces the ridge thickness of the fingerprint and eventually produces a skeleton-like structure when repeated until convergence. Thickening has the opposite tendency, expanding foreground regions. Although thinning and thickening are theoretically dual under image complementation, their visual results are not simple opposites in practical images.
 
+### Task 5 – Connected Components and Labels
+The aim of this task was to identify all connected components in a binary text image, determine the largest connected component, and remove it from the image.
+
+Connected component analysis was performed using the `bwconncomp` function.
+The number of pixels in each detected component was computed using `cellfun(@numel, CC.PixelIdxList)`, and the largest component was identified using the max function. The pixels belonging to this largest component were then set to zero to erase it from the binary image.
+```matlab
+t = imread('assets/text.png');
+imshow(t)
+CC = bwconncomp(t)
+```
+
+```matlab
+numPixels = cellfun(@numel, CC.PixelIdxList);
+[biggest, idx] = max(numPixels);
+t(CC.PixelIdxList{idx}) = 0;
+figure
+imshow(t)
+```
+<img src="11.png" width="300"> <img src="12.png" width="300"> 
+
+**Comment on the result**
+The connected component analysis successfully identified multiple foreground regions in the binary text image.
+By counting the number of pixels in each component, the largest connected component was detected and removed from the image.
+After removal, the remaining smaller text regions are still visible, confirming that the operation correctly targeted only the largest connected structure without affecting other components.
+
+
+
+
+
+
 
 
