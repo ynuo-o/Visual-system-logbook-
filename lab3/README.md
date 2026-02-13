@@ -237,3 +237,57 @@ After contrast stretching:
 
 These observations confirm that the histogram-based contrast enhancement successfully improves the perceptual quality of the grayscale image.
 
+#### Histogram Equalization
+Then we perform **histogram equalization** using the **cumulative distribution function (CDF)** as the intensity transformation  
+function, and to compare the equalized image with the original and contrast-stretched images.
+
+To visualise the mapping used in histogram equalization, the CDF of the contrast-stretched image **g** was replotted with proper axis scaling and labels.
+
+```matlab
+x = linspace(0, 1, 256);    % x has 256 values equally spaced
+                            %  .... between 0 and 1
+figure
+plot(x, g_cdf)
+axis([0 1 0 1])             % graph x and y range is 0 to 1
+set(gca, 'xtick', 0:0.2:1)  % x tick marks are in steps of 0.2
+set(gca, 'ytick', 0:0.2:1)
+xlabel('Input intensity values', 'fontsize', 9)
+ylabel('Output intensity values', 'fontsize', 9)
+title('Transformation function', 'fontsize', 12)
+```
+<img src="13.png" width="300"> 
+
+The transformation function is monotonically increasing from 0 to 1, confirming a valid gray-level mapping suitable for histogram equalization.
+
+Histogram equalization was applied using MATLAB’s built-in function `histeq`.
+
+```matlab
+h = histeq(g,256);              % histogram equalize g
+close all
+montage({f, g, h})
+figure;
+subplot(1,3,1); imhist(f);
+subplot(1,3,2); imhist(g);
+subplot(1,3,3); imhist(h);
+```
+<img src="14.png" width="300"> <img src="15.png" width="300"> 
+
+From the MATLAB workspace: f, g, h all have size 500 × 500 (uint8); The transformation vector x has size 1 × 256 (double)
+This confirms that histogram equalization preserves the spatial resolution and data type of the image.
+
+#### Results
+* The equalized image h exhibits higher global contrast than both the original image f and the contrast-stretched image g.
+* Fine texture details in the seeds become more clearly visible.
+* The histogram of h is more evenly distributed across the full grayscale range[0,255],indicating improved gray-level utilisation.
+
+#### Interpretation
+Histogram equalization redistributes pixel intensities according to the cumulative distribution function, producing:
+* Expanded contrast in previously crowded intensity regions
+* Reduced dominance of mid-range gray levels
+* A more perceptually balanced grayscale image
+
+Compared with simple contrast stretching, histogram equalization provides a stronger global enhancement, although it may also amplify noise in some regions.
+
+Overall, histogram equalization significantly improves the visual quality and gray-level distribution of the image.
+
+
