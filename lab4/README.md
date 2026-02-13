@@ -69,8 +69,12 @@ Conclusion: Morphological dilation enlarges foreground structures according to t
 * Diagonal SE emphasises directional growth
 * Repeated dilation increases connectivity but may degrade visual clarity.
 
-
-
+#### 2. Generation of structuring element
+Structuring elements for morphological operations were generated using the MATLAB function `strel`. For example, a disk-shaped structuring element with radius 4 was created and its neighbourhood matrix was inspected to understand its binary structure.
+```matlab
+SE = strel('disk',4);
+SE.Neighborhood         % print the SE neighborhood contents
+```
 
 
 
