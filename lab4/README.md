@@ -336,6 +336,7 @@ imshow(t)
 <img src="11.png" width="300"> <img src="12.png" width="300"> 
 
 **Comment on the result**
+
 The connected component analysis successfully identified multiple foreground regions in the binary text image.
 By counting the number of pixels in each component, the largest connected component was detected and removed from the image.
 After removal, the remaining smaller text regions are still visible, confirming that the operation correctly targeted only the largest connected structure without affecting other components.
